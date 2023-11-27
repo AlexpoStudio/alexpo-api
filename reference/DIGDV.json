@@ -1,0 +1,19 @@
+{
+  "openapi": "3.1.0",
+  "x-stoplight": {
+    "id": "x0tz82a6vkdlq"
+  },
+  "info": {
+    "title": "DIGDV",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {}
+  }
+}
