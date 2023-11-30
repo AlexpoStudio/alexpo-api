@@ -170,6 +170,54 @@
                                   "id": "np874yj9a0o6f"
                                 }
                               },
+                              "direction_gap_avg": {
+                                "type": "number",
+                                "x-stoplight": {
+                                  "id": "nj8th5gpcty3q"
+                                }
+                              },
+                              "direction_gap_sum": {
+                                "type": "number",
+                                "x-stoplight": {
+                                  "id": "gxsf81osc9z5s"
+                                }
+                              },
+                              "direction_headway_avg": {
+                                "type": "number",
+                                "x-stoplight": {
+                                  "id": "up4xgyht23rbo"
+                                }
+                              },
+                              "direction_headway_sum": {
+                                "type": "number",
+                                "x-stoplight": {
+                                  "id": "k6dkxkbxjtuzp"
+                                }
+                              },
+                              "direction_speed_avg": {
+                                "type": "number",
+                                "x-stoplight": {
+                                  "id": "xl8576wcozxl3"
+                                }
+                              },
+                              "direction_speed85_avg": {
+                                "type": "number",
+                                "x-stoplight": {
+                                  "id": "icxkfr74bw3c7"
+                                }
+                              },
+                              "direction_occupancy_prc": {
+                                "type": "number",
+                                "x-stoplight": {
+                                  "id": "8703plzrz2dl0"
+                                }
+                              },
+                              "direction_occupancy_sum": {
+                                "type": "number",
+                                "x-stoplight": {
+                                  "id": "fksrnz6wi3dnv"
+                                }
+                              },
                               "lanes": {
                                 "type": "array",
                                 "items": {
@@ -235,6 +283,14 @@
                             "code": "string",
                             "name": "string",
                             "direction_vehicles": 0,
+                            "direction_gap_avg": 0,
+                            "direction_gap_sum": 0,
+                            "direction_headway_avg": 0,
+                            "direction_headway_sum": 0,
+                            "direction_speed_avg": 0,
+                            "direction_speed85_avg": 0,
+                            "direction_occupancy_prc": 0,
+                            "direction_occupancy_sum": 0,
                             "lanes": [
                               {
                                 "lane": {
