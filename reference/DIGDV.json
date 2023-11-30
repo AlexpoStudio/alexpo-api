@@ -339,6 +339,72 @@
           }
         ]
       }
+    },
+    "/city/services/list": {
+      "post": {
+        "summary": "/city/services/list",
+        "operationId": "post-city-services-list",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "x-stoplight": {
+                        "id": "peccrn4wbcgum"
+                      },
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "x-stoplight": {
+                            "id": "8t5arzym9a9vz"
+                          }
+                        },
+                        "name": {
+                          "type": "string",
+                          "x-stoplight": {
+                            "id": "3tzq6dp53urvw"
+                          }
+                        },
+                        "state": {
+                          "$ref": "#/components/schemas/dicti_code_name",
+                          "x-stoplight": {
+                            "id": "u9wzmes7l153d"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "data": {
+                        "id": 0,
+                        "name": "string",
+                        "state": {
+                          "code": "string",
+                          "name": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-stoplight": {
+          "id": "soxnvmxy3nowx"
+        },
+        "requestBody": {
+          "content": {}
+        }
+      }
     }
   },
   "components": {
@@ -503,6 +569,24 @@
           {
             "id": 0,
             "name": "string"
+          }
+        ]
+      },
+      "dicti_limit": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "limit": 99999
+          }
+        },
+        "examples": [
+          {
+            "limit": 0
           }
         ]
       }
