@@ -12,11 +12,283 @@
       "url": "http://localhost:3000"
     }
   ],
-  "paths": {},
+  "paths": {
+    "/api/device/traffic_detector/data/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "/api/device/traffic_detector/data/{id}",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-examples": {
+                    "Example 1": {
+                      "device_id": "53264f62-d61b-47a7-ac2e-3a2e227c4856",
+                      "device_ip": "172.16.252.24",
+                      "device_name": "DT1",
+                      "last_message_id": "9cf16785-1891-4bf9-af5c-9616334a48b3",
+                      "detector_statistics": {
+                        "range_start": "2023-11-29T17:59:25+03:00",
+                        "range_end": "2023-11-29T18:00:25+03:00",
+                        "directions": [
+                          {
+                            "code": "1",
+                            "name": "По ходу",
+                            "lanes": [
+                              {
+                                "lane": {
+                                  "code": "4",
+                                  "name": "4"
+                                },
+                                "total_vehicles": 1,
+                                "vehicles_flow": [
+                                  {
+                                    "vehicle_type": {
+                                      "code": "class_0",
+                                      "name": "Неопознанный тип ТС"
+                                    },
+                                    "counter": 0
+                                  },
+                                  {
+                                    "vehicle_type": {
+                                      "code": "class_2",
+                                      "name": "Велосипед"
+                                    },
+                                    "counter": 0
+                                  },
+                                  {
+                                    "vehicle_type": {
+                                      "code": "class_3",
+                                      "name": "Мотоцикл"
+                                    },
+                                    "counter": 0
+                                  },
+                                  {
+                                    "vehicle_type": {
+                                      "code": "class_4",
+                                      "name": "Автомобиль"
+                                    },
+                                    "counter": 1
+                                  },
+                                  {
+                                    "vehicle_type": {
+                                      "code": "class_5",
+                                      "name": "Грузовое транспортное средство"
+                                    },
+                                    "counter": 0
+                                  },
+                                  {
+                                    "vehicle_type": {
+                                      "code": "class_6",
+                                      "name": "Грузовой фургон"
+                                    },
+                                    "counter": 0
+                                  },
+                                  {
+                                    "vehicle_type": {
+                                      "code": "class_7",
+                                      "name": "Короткий грузовик"
+                                    },
+                                    "counter": 0
+                                  },
+                                  {
+                                    "vehicle_type": {
+                                      "code": "class_8",
+                                      "name": "Длинномерный грузовик"
+                                    },
+                                    "counter": 0
+                                  },
+                                  {
+                                    "vehicle_type": {
+                                      "code": "class_1",
+                                      "name": "Пешеход"
+                                    },
+                                    "counter": 0
+                                  }
+                                ],
+                                "vehicle_interval_avg": 0,
+                                "vehicle_interval": 0,
+                                "speed_avg": 66.959,
+                                "speed85_avg": null,
+                                "concentration": 0.403
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "device_ip": {
+                      "type": "string"
+                    },
+                    "device_name": {
+                      "type": "string"
+                    },
+                    "last_message_id": {
+                      "type": "string"
+                    },
+                    "detector_statistics": {
+                      "type": "object",
+                      "properties": {
+                        "range_start": {
+                          "type": "string"
+                        },
+                        "range_end": {
+                          "type": "string"
+                        },
+                        "directions": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "direction_vehicles": {
+                                "type": "integer",
+                                "x-stoplight": {
+                                  "id": "np874yj9a0o6f"
+                                }
+                              },
+                              "lanes": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "lane": {
+                                      "$ref": "#/components/schemas/dicti_code_name"
+                                    },
+                                    "total_vehicles": {
+                                      "type": "integer"
+                                    },
+                                    "vehicles_flow": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "vehicle_type": {
+                                            "$ref": "#/components/schemas/dicti_code_name"
+                                          },
+                                          "counter": {
+                                            "type": "integer"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "vehicle_interval_avg": {
+                                      "type": "integer"
+                                    },
+                                    "vehicle_interval": {
+                                      "type": "integer"
+                                    },
+                                    "speed_avg": {
+                                      "type": "number"
+                                    },
+                                    "speed85_avg": {
+                                      "type": "null"
+                                    },
+                                    "concentration": {
+                                      "type": "number"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "device_id": "string",
+                      "device_ip": "string",
+                      "device_name": "string",
+                      "last_message_id": "string",
+                      "detector_statistics": {
+                        "range_start": "string",
+                        "range_end": "string",
+                        "directions": [
+                          {
+                            "code": "string",
+                            "name": "string",
+                            "direction_vehicles": 0,
+                            "lanes": [
+                              {
+                                "lane": {
+                                  "code": "string",
+                                  "name": "string"
+                                },
+                                "total_vehicles": 0,
+                                "vehicles_flow": [
+                                  {
+                                    "vehicle_type": {
+                                      "code": "string",
+                                      "name": "string"
+                                    },
+                                    "counter": 0
+                                  }
+                                ],
+                                "vehicle_interval_avg": 0,
+                                "vehicle_interval": 0,
+                                "speed_avg": 0,
+                                "speed85_avg": null,
+                                "concentration": 0
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-device-traffic_detector-data-id",
+        "x-stoplight": {
+          "id": "meq892vn2idtf"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "id",
+            "required": true
+          }
+        ]
+      }
+    }
+  },
   "components": {
     "schemas": {
-      "dicti.id_code_name_description": {
-        "title": "dicti.id_code_name_description",
+      "dicti_id_code_name_description": {
+        "title": "dicti_id_code_name_description",
         "x-stoplight": {
           "id": "62j4k0snlm3ki"
         },
@@ -56,8 +328,8 @@
           }
         ]
       },
-      "dicti.code_name_descriprion": {
-        "title": "dicti.code_name_descriprion",
+      "dicti_code_name_descriprion": {
+        "title": "dicti_code_name_descriprion",
         "x-stoplight": {
           "id": "f5cz7mtfrpzdc"
         },
@@ -90,8 +362,8 @@
           }
         ]
       },
-      "dicti.id_name_description": {
-        "title": "dicti.id_name_description",
+      "dicti_id_name_description": {
+        "title": "dicti_id_name_description",
         "x-stoplight": {
           "id": "mz82ti6c06myw"
         },
@@ -124,8 +396,8 @@
           }
         ]
       },
-      "dicti.code_name": {
-        "title": "dicti.code_name",
+      "dicti_code_name": {
+        "title": "dicti_code_name",
         "x-stoplight": {
           "id": "pzwflkxd5e1nm"
         },
@@ -151,8 +423,8 @@
           }
         ]
       },
-      "dicti.id_name": {
-        "title": "dicti.id_name",
+      "dicti_id_name": {
+        "title": "dicti_id_name",
         "x-stoplight": {
           "id": "stw4sbpb5pxle"
         },
