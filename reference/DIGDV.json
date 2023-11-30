@@ -340,9 +340,9 @@
         ]
       }
     },
-    "/city/services/list": {
+    "/api/services/list": {
       "post": {
-        "summary": "/city/services/list",
+        "summary": "/api/services/list",
         "operationId": "post-city-services-list",
         "responses": {
           "200": {
@@ -403,6 +403,62 @@
         },
         "requestBody": {
           "content": {}
+        }
+      },
+      "parameters": []
+    },
+    "/api/services/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "/api/services/{id}",
+        "operationId": "post-city-services-id",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "srw2ftjwshqn0"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "69zglb9iipsc8"
+                    }
+                  },
+                  "state": {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "0vng3mff5kfxe"
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "id": 0,
+                    "state": "string"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
