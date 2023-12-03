@@ -455,6 +455,89 @@
           }
         }
       }
+    },
+    "/api/event/asudd/force_send/closed": {
+      "post": {
+        "summary": "/api/event/asudd/force_send/closed",
+        "operationId": "post-api-event-asudd-force_send-closed",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "x-stoplight": {
+                        "id": "yg4kpccjzvv2v"
+                      },
+                      "type": "array",
+                      "items": {
+                        "x-stoplight": {
+                          "id": "thmje51hzv0ae"
+                        },
+                        "type": "integer"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "data": [
+                        0
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-stoplight": {
+          "id": "j3ugo5f51hy1m"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date_start": {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "zbry6bs4glqgh"
+                    },
+                    "format": "date",
+                    "deprecated": true
+                  },
+                  "date_end": {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "1g2cnmx65hzg4"
+                    },
+                    "format": "date",
+                    "deprecated": true
+                  }
+                },
+                "required": [
+                  "date_start",
+                  "date_end"
+                ]
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "date_start": "2019-08-24",
+                    "date_end": "2019-08-24"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
