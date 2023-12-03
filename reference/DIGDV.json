@@ -538,6 +538,126 @@
           }
         }
       }
+    },
+    "/city/integration/rtcm_inbox/list": {
+      "post": {
+        "summary": "/city/integration/rtcm_inbox/list",
+        "operationId": "post-city-integration-rtcm_inbox-list",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "x-stoplight": {
+                        "id": "kphicgaqyxjra"
+                      },
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/city-integration-rtcm_inbox",
+                        "x-stoplight": {
+                          "id": "athf7weamm6y3"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "data": [
+                        {
+                          "id": "string",
+                          "received_at": "string",
+                          "source": {
+                            "id": 0,
+                            "name": "string",
+                            "description": "string"
+                          },
+                          "data_type": {
+                            "code": "string",
+                            "name": "string",
+                            "description": "string"
+                          },
+                          "message": "string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-stoplight": {
+          "id": "befj7xw2hkquy"
+        }
+      },
+      "parameters": []
+    },
+    "/city/integration/rtcm_inbox/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "/city/integration/rtcm_inbox/{id}",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/city-integration-rtcm_inbox",
+                      "x-stoplight": {
+                        "id": "au9xlk5thcnz1"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "data": {
+                        "id": "string",
+                        "received_at": "string",
+                        "source": {
+                          "id": 0,
+                          "name": "string",
+                          "description": "string"
+                        },
+                        "data_type": {
+                          "code": "string",
+                          "name": "string",
+                          "description": "string"
+                        },
+                        "message": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-city-integration-rtcm_inbox-id",
+        "x-stoplight": {
+          "id": "ifhyh2ct4234m"
+        }
+      }
     }
   },
   "components": {
@@ -722,6 +842,64 @@
             "limit": 0
           }
         ]
+      },
+      "city-integration-rtcm_inbox": {
+        "type": "object",
+        "x-stoplight": {
+          "id": "2503327fd383c"
+        },
+        "x-examples": {
+          "Example 1": {
+            "id": "string",
+            "received_at": "string",
+            "source": {
+              "id": 0,
+              "name": "string",
+              "description": "string"
+            },
+            "data_type": {
+              "code": "string",
+              "name": "string",
+              "description": "string"
+            },
+            "message": "string"
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "received_at": {
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/components/schemas/dicti_id_name_description"
+          },
+          "data_type": {
+            "$ref": "#/components/schemas/dicti_code_name_descriprion"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "examples": [
+          {
+            "id": "string",
+            "received_at": "string",
+            "source": {
+              "id": 0,
+              "name": "string",
+              "description": "string"
+            },
+            "data_type": {
+              "code": "string",
+              "name": "string",
+              "description": "string"
+            },
+            "message": "string"
+          }
+        ],
+        "title": ""
       }
     }
   },
