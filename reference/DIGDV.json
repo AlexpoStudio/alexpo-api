@@ -658,6 +658,137 @@
           "id": "ifhyh2ct4234m"
         }
       }
+    },
+    "/city/integration/rtcm_outbox/list": {
+      "post": {
+        "summary": "/city/integration/rtcm_outbox/list",
+        "operationId": "post-city-integration-rtcm_outbox-list",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "x-stoplight": {
+                        "id": "o329sh2a0r7xv"
+                      },
+                      "items": {
+                        "$ref": "#/components/schemas/city-integration-rtcm_outbox",
+                        "x-stoplight": {
+                          "id": "l4zlafvgnloub"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "data": [
+                        {
+                          "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                          "id_message_inbox": "af415c37-902f-4d49-a99b-61b6fc5a87d6",
+                          "send_at": "string",
+                          "consumer": {
+                            "code": "string",
+                            "name": "string",
+                            "description": "string"
+                          },
+                          "obu": {
+                            "id": 0,
+                            "external_id": "string",
+                            "ip": "string"
+                          },
+                          "data_type": {
+                            "code": "string",
+                            "name": "string",
+                            "description": "string"
+                          },
+                          "message": "string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-stoplight": {
+          "id": "p5ta4iiqq5p06"
+        }
+      }
+    },
+    "/city/integration/rtcm_outbox/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "/city/integration/rtcm_outbox/{id}",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/city-integration-rtcm_outbox",
+                      "x-stoplight": {
+                        "id": "eaa1bc6heuhby"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "data": {
+                        "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                        "id_message_inbox": "af415c37-902f-4d49-a99b-61b6fc5a87d6",
+                        "send_at": "string",
+                        "consumer": {
+                          "code": "string",
+                          "name": "string",
+                          "description": "string"
+                        },
+                        "obu": {
+                          "id": 0,
+                          "external_id": "string",
+                          "ip": "string"
+                        },
+                        "data_type": {
+                          "code": "string",
+                          "name": "string",
+                          "description": "string"
+                        },
+                        "message": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-city-integration-rtcm_outbox-id",
+        "x-stoplight": {
+          "id": "lsrvo26zeyqer"
+        }
+      }
     }
   },
   "components": {
@@ -900,6 +1031,102 @@
           }
         ],
         "title": ""
+      },
+      "city-integration-rtcm_outbox": {
+        "title": "city-integration-rtcm_outbox",
+        "x-stoplight": {
+          "id": "vpi9w8cb6awii"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "61e4me1qkcsqh"
+            },
+            "format": "uuid"
+          },
+          "id_message_inbox": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "j49f9oyh72boj"
+            },
+            "format": "uuid"
+          },
+          "send_at": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "yf0brdvk4zuih"
+            }
+          },
+          "consumer": {
+            "$ref": "#/components/schemas/dicti_code_name_descriprion",
+            "x-stoplight": {
+              "id": "di5goz0loj2x8"
+            }
+          },
+          "obu": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "vuprccdd1yeka"
+            },
+            "properties": {
+              "id": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "g6towranoap0q"
+                }
+              },
+              "external_id": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "c1gq7zvflnam7"
+                }
+              },
+              "ip": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "q8bz5x5ojgzr2"
+                }
+              }
+            }
+          },
+          "data_type": {
+            "$ref": "#/components/schemas/dicti_code_name_descriprion",
+            "x-stoplight": {
+              "id": "k79i4nuk2f9td"
+            }
+          },
+          "message": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "tnnlk5vcsgf8y"
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "id_message_inbox": "af415c37-902f-4d49-a99b-61b6fc5a87d6",
+            "send_at": "string",
+            "consumer": {
+              "code": "string",
+              "name": "string",
+              "description": "string"
+            },
+            "obu": {
+              "id": 0,
+              "external_id": "string",
+              "ip": "string"
+            },
+            "data_type": {
+              "code": "string",
+              "name": "string",
+              "description": "string"
+            },
+            "message": "string"
+          }
+        ]
       }
     }
   },
