@@ -407,7 +407,7 @@
       },
       "parameters": []
     },
-    "/api/services/{id}": {
+    "/city/services/{id}/state": {
       "parameters": [
         {
           "schema": {
@@ -419,7 +419,7 @@
         }
       ],
       "post": {
-        "summary": "/api/services/{id}",
+        "summary": "/city/services/{id}/state",
         "operationId": "post-city-services-id",
         "responses": {
           "200": {
@@ -435,12 +435,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "id": {
-                    "type": "integer",
-                    "x-stoplight": {
-                      "id": "69zglb9iipsc8"
-                    }
-                  },
                   "state": {
                     "type": "string",
                     "x-stoplight": {
