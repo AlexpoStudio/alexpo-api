@@ -1056,7 +1056,32 @@
                   }
                 }
               },
-              "examples": {}
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "e_p": "string",
+                    "s_p": "string",
+                    "kind": 0,
+                    "type": "string",
+                    "color": 0,
+                    "width": 0,
+                    "length": 0,
+                    "offset": 0,
+                    "status": 0,
+                    "showNum": true,
+                    "material": 0,
+                    "direction": 0,
+                    "feature_id": "ba6c7b2c-38fc-4a78-a187-51c7bbbd5c50",
+                    "feature_type": "string",
+                    "geom": {
+                      "type": "string",
+                      "coordinates": [
+                        0
+                      ]
+                    }
+                  }
+                }
+              }
             }
           }
         }
