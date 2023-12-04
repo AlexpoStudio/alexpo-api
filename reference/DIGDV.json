@@ -789,6 +789,134 @@
           "id": "lsrvo26zeyqer"
         }
       }
+    },
+    "/v2x/editor/curbstone/edit": {
+      "post": {
+        "summary": "/v2x/editor/curbstone/edit",
+        "operationId": "post-v2x-editor-curbstone-edit",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "ukvfrcfue5acm"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "uid": {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "g2tozi09vc9ka"
+                    },
+                    "format": "uuid"
+                  },
+                  "type": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "ei0x8qoctxb7d"
+                    },
+                    "description": "{ label: \"Стандартный\", value: CurbstoneType.regular },\r\n{ label: \"Пониженный\", value: CurbstoneType.low },\r\n\r\nregular = 0,\r\nlow = 1,\r\nvitrual = 2,"
+                  }
+                },
+                "required": [
+                  "uid",
+                  "type"
+                ]
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "uid": "07cc67f4-45d6-494b-adac-09b5cbc7e2b5",
+                    "type": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2x/editor/road_sign/edit": {
+      "post": {
+        "summary": "/v2x/editor/road_sign/edit",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "post-v2x-editor-road_sign-edit",
+        "x-stoplight": {
+          "id": "jcs5qwm2dw5cm"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "uid": {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "iaizf2az4qv81"
+                    },
+                    "format": "uuid"
+                  },
+                  "type": {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "1dtxl0hze2r6v"
+                    },
+                    "description": "type: {\r\n  title: \"Тип\",\r\n  type: \"TextField\",\r\n}"
+                  },
+                  "accent": {
+                    "type": "boolean",
+                    "x-stoplight": {
+                      "id": "sbdxkcpidu4a7"
+                    },
+                    "description": "accent: {\r\n  title: \"Повышенная информативность\",\r\n  type: \"Bool\",\r\n}\r\ntrue = Повышенная информативность\r\nfalse = Не повышенная информативность"
+                  },
+                  "mountHeight": {
+                    "type": "number",
+                    "x-stoplight": {
+                      "id": "1c7bllhc61s9p"
+                    },
+                    "format": "float",
+                    "description": "mountHeight: {\r\n  title: \"Высота монтажа, м\",\r\n  type: \"TextField\",\r\n}"
+                  },
+                  "temp": {
+                    "type": "boolean",
+                    "x-stoplight": {
+                      "id": "uzg33wnpvjmvk"
+                    },
+                    "description": "temp: {\r\n  title: \"Временный\",\r\n  type: \"Bool\",\r\n}\r\ntrue = Временный\r\nfalse = Постоянный"
+                  },
+                  "light": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "gw3ncxh92e2d5"
+                    },
+                    "description": "light: {\r\n  title: \"Подсветка\",\r\n  type: \"List\",\r\n  items: [\r\n    { label: \"Без подстветки\", value: RoadSignLight.none },\r\n    { label: \"Внешняя\", value: RoadSignLight.external },\r\n    { label: \"Внутренняя\", value: RoadSignLight.internal },\r\n  ],\r\n} as ListPropertyDescription\r\n\r\nexport enum RoadSignLight {\r\n  none = 0,\r\n  internal = 1,\r\n  external = 2,\r\n}"
+                  },
+                  "speed": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "uhcv6kr75yzag"
+                    },
+                    "description": "speed: {\r\n  title: \"Скорость, км/ч\",\r\n  type: \"List\",\r\n  items: speedLimits,\r\n} as ListPropertyDescription"
+                  }
+                }
+              },
+              "examples": {}
+            }
+          }
+        }
+      }
     }
   },
   "components": {
