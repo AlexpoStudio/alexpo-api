@@ -929,6 +929,138 @@
           }
         }
       }
+    },
+    "/v2x/editor/linear_marking/create": {
+      "post": {
+        "summary": "/v2x/editor/linear_marking/create",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "post-v2x-editor-linear_marking-create",
+        "x-stoplight": {
+          "id": "q1nlkhxov1ocv"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-examples": {
+                  "Example 1": {
+                    "e_p": "58.67250 31.89989",
+                    "s_p": "58.65829 32.00389",
+                    "kind": 1,
+                    "type": "1.5",
+                    "color": 1,
+                    "width": 0.15,
+                    "length": 4,
+                    "offset": 4.56,
+                    "status": 1,
+                    "showNum": true,
+                    "material": 1,
+                    "direction": 0,
+                    "feature_id": "fbb142f7-2100-4a79-8ec3-d765087f695d",
+                    "feature_type": "linear_marking",
+                    "geom": {
+                      "type": "Polygon",
+                      "coordinates": [
+                        [
+                          [
+                            31.954249958507717,
+                            58.66678400983852
+                          ],
+                          [
+                            31.95431630127132,
+                            58.66677426811992
+                          ],
+                          [
+                            31.95431558880955,
+                            58.66677297140325
+                          ],
+                          [
+                            31.954249246045947,
+                            58.66678271312222
+                          ],
+                          [
+                            31.954249958507717,
+                            58.66678400983852
+                          ]
+                        ]
+                      ]
+                    }
+                  }
+                },
+                "properties": {
+                  "e_p": {
+                    "type": "string"
+                  },
+                  "s_p": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "integer",
+                    "description": "{ label: \"Осевая линия\", value: LinearMarkingKind.center },\r\n  { label: \"Линия рядности\", value: LinearMarkingKind.lane },\r\n  { label: \"Краевая линия\", value: LinearMarkingKind.edge },\r\n  {\r\n    label: \"Контуры островков безопасности\",\r\n    value: LinearMarkingKind.trafficIsland,\r\n  },\r\n  { label: \"Обозначение парковок\", value: LinearMarkingKind.parking },\r\n  { label: \"Обозначение буферной зоны\", value: LinearMarkingKind.buffer }\r\n\r\n  center = 1,\r\nlane = 2,\r\nedge = 3,\r\ntrafficIsland = 4,\r\nparking = 5,\r\nbuffer = 6,"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "integer",
+                    "description": "{ label: \"Белый\", value: MarkingColor.white },\r\n{ label: \"Желтый\", value: MarkingColor.yellow },\r\n{ label: \"Оранжевый\", value: MarkingColor.orange },\r\n{ label: \"Синий\", value: MarkingColor.blue },\r\n{ label: \"Красный\", value: MarkingColor.cycleMarkingRed },\r\n\r\nwhite = 1,\r\nyellow = 2,\r\norange = 3,\r\nblue = 4,\r\ngreen = 5,\r\ncycleMarkingRed = 6,"
+                  },
+                  "width": {
+                    "type": "number"
+                  },
+                  "length": {
+                    "type": "integer"
+                  },
+                  "offset": {
+                    "type": "number"
+                  },
+                  "status": {
+                    "type": "integer"
+                  },
+                  "showNum": {
+                    "type": "boolean"
+                  },
+                  "material": {
+                    "type": "integer",
+                    "description": "/**Термопластик */\r\nThermoplast = 1,\r\n/**Холодный пластик */\r\nColdplast = 2,\r\n/**Краска */\r\nPaint = 3,"
+                  },
+                  "direction": {
+                    "type": "integer"
+                  },
+                  "feature_id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "feature_type": {
+                    "type": "string"
+                  },
+                  "geom": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "coordinates": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {}
+            }
+          }
+        }
+      }
     }
   },
   "components": {
