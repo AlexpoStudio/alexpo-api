@@ -808,7 +808,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "uid": {
+                  "feature_id": {
                     "type": "string",
                     "x-stoplight": {
                       "id": "g2tozi09vc9ka"
@@ -824,14 +824,14 @@
                   }
                 },
                 "required": [
-                  "uid",
+                  "feature_id",
                   "type"
                 ]
               },
               "examples": {
                 "Example 1": {
                   "value": {
-                    "uid": "07cc67f4-45d6-494b-adac-09b5cbc7e2b5",
+                    "feature_id": "ba6c7b2c-38fc-4a78-a187-51c7bbbd5c50",
                     "type": 0
                   }
                 }
@@ -860,7 +860,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "uid": {
+                  "feature_id": {
                     "type": "string",
                     "x-stoplight": {
                       "id": "iaizf2az4qv81"
@@ -912,7 +912,19 @@
                   }
                 }
               },
-              "examples": {}
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "feature_id": "ba6c7b2c-38fc-4a78-a187-51c7bbbd5c50",
+                    "type": "string",
+                    "accent": true,
+                    "mountHeight": -3.402823669209385e+38,
+                    "temp": true,
+                    "light": 0,
+                    "speed": 0
+                  }
+                }
+              }
             }
           }
         }
