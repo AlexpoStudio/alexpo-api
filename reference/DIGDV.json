@@ -936,7 +936,30 @@
         "tags": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "feature_id ": {
+                      "type": "string",
+                      "x-stoplight": {
+                        "id": "itsrjttupx098"
+                      },
+                      "format": "uuid"
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "feature_id ": "4db92d61-2dd1-4a46-9190-40c33e9028c0"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "post-v2x-editor-linear_marking-create",
@@ -1070,6 +1093,18 @@
                           "id": "piy2s0uv87htg"
                         }
                       }
+                    }
+                  },
+                  "position": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "ks86cgo8fpr7z"
+                    },
+                    "items": {
+                      "x-stoplight": {
+                        "id": "upgd2o3e3hwd3"
+                      },
+                      "type": "number"
                     }
                   },
                   "geom": {
@@ -1267,6 +1302,10 @@
                       "material": 0,
                       "direction": 0
                     },
+                    "position": [
+                      0,
+                      0
+                    ],
                     "geom": [
                       [
                         [
@@ -1291,7 +1330,7 @@
                         [
                           [
                             31.954249958507717,
-                            58.66678400983852
+                            58.85086188552668
                           ]
                         ]
                       ]
