@@ -994,62 +994,183 @@
                   }
                 },
                 "properties": {
+                  "feature_id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "name": {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "uuxyytw6u2nc0"
+                    }
+                  },
                   "e_p": {
                     "type": "string"
                   },
                   "s_p": {
                     "type": "string"
                   },
-                  "kind": {
-                    "type": "integer",
-                    "description": "{ label: \"Осевая линия\", value: LinearMarkingKind.center },\r\n  { label: \"Линия рядности\", value: LinearMarkingKind.lane },\r\n  { label: \"Краевая линия\", value: LinearMarkingKind.edge },\r\n  {\r\n    label: \"Контуры островков безопасности\",\r\n    value: LinearMarkingKind.trafficIsland,\r\n  },\r\n  { label: \"Обозначение парковок\", value: LinearMarkingKind.parking },\r\n  { label: \"Обозначение буферной зоны\", value: LinearMarkingKind.buffer }\r\n\r\n  center = 1,\r\nlane = 2,\r\nedge = 3,\r\ntrafficIsland = 4,\r\nparking = 5,\r\nbuffer = 6,"
+                  "props": {
+                    "type": "object",
+                    "x-stoplight": {
+                      "id": "ta6ezwqjvz02j"
+                    },
+                    "properties": {
+                      "kind": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "0rtgo25libs6f"
+                        },
+                        "description": "{ label: \"Осевая линия\", value: LinearMarkingKind.center },\r\n  { label: \"Линия рядности\", value: LinearMarkingKind.lane },\r\n  { label: \"Краевая линия\", value: LinearMarkingKind.edge },\r\n  {\r\n    label: \"Контуры островков безопасности\",\r\n    value: LinearMarkingKind.trafficIsland,\r\n  },\r\n  { label: \"Обозначение парковок\", value: LinearMarkingKind.parking },\r\n  { label: \"Обозначение буферной зоны\", value: LinearMarkingKind.buffer }\r\n\r\n  center = 1,\r\nlane = 2,\r\nedge = 3,\r\ntrafficIsland = 4,\r\nparking = 5,\r\nbuffer = 6,"
+                      },
+                      "type": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "wmx7fx6cjgokx"
+                        }
+                      },
+                      "color": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "hy0alipgwf3bz"
+                        },
+                        "description": "{ label: \"Белый\", value: MarkingColor.white },\r\n{ label: \"Желтый\", value: MarkingColor.yellow },\r\n{ label: \"Оранжевый\", value: MarkingColor.orange },\r\n{ label: \"Синий\", value: MarkingColor.blue },\r\n{ label: \"Красный\", value: MarkingColor.cycleMarkingRed },\r\n\r\nwhite = 1,\r\nyellow = 2,\r\norange = 3,\r\nblue = 4,\r\ngreen = 5,\r\ncycleMarkingRed = 6,"
+                      },
+                      "width": {
+                        "type": "number",
+                        "x-stoplight": {
+                          "id": "wa0zuhxoncu14"
+                        },
+                        "format": "float"
+                      },
+                      "length": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "fmdyb304jp6bt"
+                        }
+                      },
+                      "offset": {
+                        "type": "number",
+                        "x-stoplight": {
+                          "id": "2qb3u8on84s19"
+                        }
+                      },
+                      "status": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "2hrvgzasdodsg"
+                        }
+                      },
+                      "showNum": {
+                        "type": "boolean",
+                        "x-stoplight": {
+                          "id": "1zuvvtyupaw9d"
+                        }
+                      },
+                      "material": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "alrq6sksabs12"
+                        },
+                        "description": "/**Термопластик */\r\nThermoplast = 1,\r\n/**Холодный пластик */\r\nColdplast = 2,\r\n/**Краска */\r\nPaint = 3,"
+                      },
+                      "direction": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "piy2s0uv87htg"
+                        }
+                      }
+                    }
                   },
                   "type": {
-                    "type": "string"
-                  },
-                  "color": {
-                    "type": "integer",
-                    "description": "{ label: \"Белый\", value: MarkingColor.white },\r\n{ label: \"Желтый\", value: MarkingColor.yellow },\r\n{ label: \"Оранжевый\", value: MarkingColor.orange },\r\n{ label: \"Синий\", value: MarkingColor.blue },\r\n{ label: \"Красный\", value: MarkingColor.cycleMarkingRed },\r\n\r\nwhite = 1,\r\nyellow = 2,\r\norange = 3,\r\nblue = 4,\r\ngreen = 5,\r\ncycleMarkingRed = 6,"
-                  },
-                  "width": {
-                    "type": "number"
-                  },
-                  "length": {
-                    "type": "integer"
-                  },
-                  "offset": {
-                    "type": "number"
-                  },
-                  "status": {
-                    "type": "integer"
-                  },
-                  "showNum": {
-                    "type": "boolean"
-                  },
-                  "material": {
-                    "type": "integer",
-                    "description": "/**Термопластик */\r\nThermoplast = 1,\r\n/**Холодный пластик */\r\nColdplast = 2,\r\n/**Краска */\r\nPaint = 3,"
-                  },
-                  "direction": {
-                    "type": "integer"
-                  },
-                  "feature_id": {
                     "type": "string",
-                    "format": "uuid"
+                    "description": "feature_type",
+                    "x-stoplight": {
+                      "id": "sxlwmjniutnsw"
+                    }
                   },
-                  "feature_type": {
-                    "type": "string"
+                  "rotation": {
+                    "type": "number",
+                    "x-stoplight": {
+                      "id": "rhju358t26euy"
+                    }
+                  },
+                  "created_by": {
+                    "type": "object",
+                    "x-stoplight": {
+                      "id": "0208usa12j5j4"
+                    },
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "5tn9t7rhb34nl"
+                        },
+                        "format": "uuid"
+                      },
+                      "last": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "3kfkeuawquhmh"
+                        },
+                        "default": "Frontend"
+                      },
+                      "first": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "dd8n6i5vjgsp8"
+                        },
+                        "default": "Frontend"
+                      },
+                      "login": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "9u6ybb3a7cvcw"
+                        },
+                        "default": "front"
+                      },
+                      "short": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "5741znacqokag"
+                        },
+                        "default": "Front"
+                      },
+                      "middle": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "etlg6mz2n4x4v"
+                        },
+                        "default": "F"
+                      }
+                    }
                   },
                   "geom": {
                     "type": "object",
                     "properties": {
                       "type": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "Polygon"
                       },
                       "coordinates": {
                         "type": "array",
                         "items": {
-                          "type": "number"
+                          "type": "array",
+                          "items": {
+                            "x-stoplight": {
+                              "id": "9ox2zzo9uvbef"
+                            },
+                            "type": "array",
+                            "items": {
+                              "x-stoplight": {
+                                "id": "rl2y1d2hxoyeg"
+                              },
+                              "type": "number",
+                              "example": 31.954249958507717,
+                              "exclusiveMaximum": 1,
+                              "exclusiveMinimum": 2
+                            }
+                          }
                         }
                       }
                     }
@@ -1059,24 +1180,40 @@
               "examples": {
                 "Example 1": {
                   "value": {
+                    "feature_id": "ba6c7b2c-38fc-4a78-a187-51c7bbbd5c50",
+                    "name": "string",
                     "e_p": "string",
                     "s_p": "string",
-                    "kind": 0,
-                    "type": "string",
-                    "color": 0,
-                    "width": 0,
-                    "length": 0,
-                    "offset": 0,
-                    "status": 0,
-                    "showNum": true,
-                    "material": 0,
-                    "direction": 0,
-                    "feature_id": "ba6c7b2c-38fc-4a78-a187-51c7bbbd5c50",
-                    "feature_type": "string",
-                    "geom": {
+                    "props": {
+                      "kind": 0,
                       "type": "string",
+                      "color": 0,
+                      "width": -3.402823669209385e+38,
+                      "length": 0,
+                      "offset": 0,
+                      "status": 0,
+                      "showNum": true,
+                      "material": 0,
+                      "direction": 0
+                    },
+                    "type": "string",
+                    "rotation": 0,
+                    "created_by": {
+                      "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                      "last": "Frontend",
+                      "first": "Frontend",
+                      "login": "front",
+                      "short": "Front",
+                      "middle": "F"
+                    },
+                    "geom": {
+                      "type": "Polygon",
                       "coordinates": [
-                        0
+                        [
+                          [
+                            31.954249958507717
+                          ]
+                        ]
                       ]
                     }
                   }
