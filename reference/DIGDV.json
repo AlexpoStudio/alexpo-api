@@ -1004,12 +1004,6 @@
                       "id": "uuxyytw6u2nc0"
                     }
                   },
-                  "e_p": {
-                    "type": "string"
-                  },
-                  "s_p": {
-                    "type": "string"
-                  },
                   "props": {
                     "type": "object",
                     "x-stoplight": {
@@ -1082,6 +1076,31 @@
                       }
                     }
                   },
+                  "geom": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "al6rrdr6himmx"
+                    },
+                    "items": {
+                      "x-stoplight": {
+                        "id": "wryofyg83b8ys"
+                      },
+                      "type": "array",
+                      "items": {
+                        "x-stoplight": {
+                          "id": "t2fpb0cgawh53"
+                        },
+                        "type": "array",
+                        "items": {
+                          "x-stoplight": {
+                            "id": "9e4peeuy2c4za"
+                          },
+                          "type": "number",
+                          "default": 0
+                        }
+                      }
+                    }
+                  },
                   "type": {
                     "type": "string",
                     "description": "feature_type",
@@ -1145,8 +1164,11 @@
                       }
                     }
                   },
-                  "geom": {
+                  "geom_wgs84": {
                     "type": "object",
+                    "x-stoplight": {
+                      "id": "bh338k7z24547"
+                    },
                     "properties": {
                       "type": {
                         "type": "string",
@@ -1174,6 +1196,62 @@
                         }
                       }
                     }
+                  },
+                  "sys_props": {
+                    "type": "object",
+                    "x-stoplight": {
+                      "id": "1scd7ss9gbi4z"
+                    },
+                    "properties": {
+                      "next": {
+                        "type": "array",
+                        "x-stoplight": {
+                          "id": "dn97ae2yr18rw"
+                        },
+                        "items": {
+                          "x-stoplight": {
+                            "id": "9feew9s5mf81x"
+                          },
+                          "type": "integer"
+                        }
+                      },
+                      "prev": {
+                        "type": "array",
+                        "x-stoplight": {
+                          "id": "08fzidh8av45z"
+                        },
+                        "items": {
+                          "x-stoplight": {
+                            "id": "ui6x2t7aao1ak"
+                          },
+                          "type": "integer"
+                        }
+                      },
+                      "bulges": {
+                        "type": "array",
+                        "x-stoplight": {
+                          "id": "2u1tyttv5caa2"
+                        },
+                        "items": {
+                          "x-stoplight": {
+                            "id": "vj46kml4knh40"
+                          },
+                          "type": "number"
+                        }
+                      },
+                      "nextOffset": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "722w0sq63p4bq"
+                        }
+                      },
+                      "prevOffset": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "pml6p8b20tlye"
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -1182,8 +1260,6 @@
                   "value": {
                     "feature_id": "ba6c7b2c-38fc-4a78-a187-51c7bbbd5c50",
                     "name": "string",
-                    "e_p": "string",
-                    "s_p": "string",
                     "props": {
                       "kind": 0,
                       "type": "string",
@@ -1196,6 +1272,14 @@
                       "material": 0,
                       "direction": 0
                     },
+                    "geom": [
+                      [
+                        [
+                          0,
+                          0
+                        ]
+                      ]
+                    ],
                     "type": "string",
                     "rotation": 0,
                     "created_by": {
@@ -1206,15 +1290,28 @@
                       "short": "Front",
                       "middle": "F"
                     },
-                    "geom": {
+                    "geom_wgs84": {
                       "type": "Polygon",
                       "coordinates": [
                         [
                           [
-                            31.954249958507717
+                            31.954249958507717,
+                            58.66678400983852
                           ]
                         ]
                       ]
+                    },
+                    "sys_props": {
+                      "next": [
+                        0,
+                        1
+                      ],
+                      "prev": [
+                        0,
+                        1
+                      ],
+                      "nextOffset": 1,
+                      "prevOffset": 0
                     }
                   }
                 }
