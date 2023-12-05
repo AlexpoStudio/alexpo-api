@@ -994,10 +994,6 @@
                   }
                 },
                 "properties": {
-                  "feature_id": {
-                    "type": "string",
-                    "format": "uuid"
-                  },
                   "name": {
                     "type": "string",
                     "x-stoplight": {
@@ -1258,7 +1254,6 @@
               "examples": {
                 "Example 1": {
                   "value": {
-                    "feature_id": "ba6c7b2c-38fc-4a78-a187-51c7bbbd5c50",
                     "name": "string",
                     "props": {
                       "kind": 0,
