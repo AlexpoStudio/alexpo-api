@@ -1434,18 +1434,6 @@
                   },
                   "streetLightMountType": {
                     "type": "string"
-                  },
-                  "geom_wgs84": {
-                    "type": "array",
-                    "x-stoplight": {
-                      "id": "5znczyqnrlx3o"
-                    },
-                    "items": {
-                      "x-stoplight": {
-                        "id": "curfam8ow627i"
-                      },
-                      "type": "number"
-                    }
                   }
                 }
               },
@@ -1464,11 +1452,7 @@
                     "version": 0,
                     "textAngle": 0,
                     "textRotation": 0,
-                    "streetLightMountType": "string",
-                    "geom_wgs84": [
-                      0,
-                      0
-                    ]
+                    "streetLightMountType": "string"
                   }
                 }
               }
