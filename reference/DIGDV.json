@@ -1434,6 +1434,41 @@
                   },
                   "streetLightMountType": {
                     "type": "string"
+                  },
+                  "geom_wgs84": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "5znczyqnrlx3o"
+                    },
+                    "items": {
+                      "x-stoplight": {
+                        "id": "curfam8ow627i"
+                      },
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "feature_id": "string",
+                    "mode": "string",
+                    "type": "string",
+                    "height": 0,
+                    "status": 0,
+                    "basePos": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "version": 0,
+                    "textAngle": 0,
+                    "textRotation": 0,
+                    "streetLightMountType": "string",
+                    "geom_wgs84": [
+                      0,
+                      0
+                    ]
                   }
                 }
               }
@@ -1452,63 +1487,105 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
+                  "type": "array",
                   "x-examples": {
-                    "Example 1": {
-                      "feature_id": "string",
-                      "mode": "string",
-                      "type": "string",
-                      "height": 0,
-                      "status": 0,
-                      "basePos": {
-                        "x": 0,
-                        "y": 0
-                      },
-                      "version": 0,
-                      "textAngle": 0,
-                      "textRotation": 0,
-                      "streetLightMountType": "string"
-                    }
-                  },
-                  "properties": {
-                    "feature_id": {
-                      "type": "string"
-                    },
-                    "mode": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    },
-                    "height": {
-                      "type": "integer"
-                    },
-                    "status": {
-                      "type": "integer"
-                    },
-                    "basePos": {
-                      "type": "object",
-                      "properties": {
-                        "x": {
-                          "type": "integer"
+                    "Example 1": [
+                      {
+                        "feature_id": "string",
+                        "mode": "string",
+                        "type": "string",
+                        "height": 0,
+                        "status": 0,
+                        "basePos": {
+                          "x": 0,
+                          "y": 0
                         },
-                        "y": {
-                          "type": "integer"
+                        "version": 0,
+                        "textAngle": 0,
+                        "textRotation": 0,
+                        "streetLightMountType": "string"
+                      }
+                    ]
+                  },
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "feature_id": {
+                        "type": "string"
+                      },
+                      "mode": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "height": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "integer"
+                      },
+                      "basePos": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "integer"
+                          },
+                          "y": {
+                            "type": "integer"
+                          }
+                        }
+                      },
+                      "version": {
+                        "type": "integer"
+                      },
+                      "textAngle": {
+                        "type": "integer"
+                      },
+                      "textRotation": {
+                        "type": "integer"
+                      },
+                      "streetLightMountType": {
+                        "type": "string"
+                      },
+                      "geom_wgs84": {
+                        "type": "array",
+                        "x-stoplight": {
+                          "id": "7eghw6pnksxd6"
+                        },
+                        "items": {
+                          "x-stoplight": {
+                            "id": "7knfzhefwix59"
+                          },
+                          "type": "number"
                         }
                       }
-                    },
-                    "version": {
-                      "type": "integer"
-                    },
-                    "textAngle": {
-                      "type": "integer"
-                    },
-                    "textRotation": {
-                      "type": "integer"
-                    },
-                    "streetLightMountType": {
-                      "type": "string"
                     }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": [
+                      {
+                        "feature_id": "string",
+                        "mode": "string",
+                        "type": "string",
+                        "height": 0,
+                        "status": 0,
+                        "basePos": {
+                          "x": 0,
+                          "y": 0
+                        },
+                        "version": 0,
+                        "textAngle": 0,
+                        "textRotation": 0,
+                        "streetLightMountType": "string",
+                        "geom_wgs84": [
+                          0,
+                          0
+                        ]
+                      }
+                    ]
                   }
                 }
               }
