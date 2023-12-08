@@ -1354,6 +1354,172 @@
           }
         }
       }
+    },
+    "/v2x/editor/pole/edit": {
+      "post": {
+        "summary": "/v2x/editor/pole/edit",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "post-v2x-editor-pole-edit",
+        "x-stoplight": {
+          "id": "ch3ro2q0yv05w"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-examples": {
+                  "Example 1": {
+                    "mode": "double",
+                    "type": "street_light",
+                    "height": 12,
+                    "status": 1,
+                    "basePos": {
+                      "x": 2301253.576254267,
+                      "y": 479573.27119152155
+                    },
+                    "version": 2,
+                    "textAngle": -0.03898590036307468,
+                    "textRotation": 0,
+                    "streetLightMountType": "reinforced_concrete"
+                  }
+                },
+                "properties": {
+                  "feature_id": {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "yyoqjylpt23xt"
+                    }
+                  },
+                  "mode": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "height": {
+                    "type": "integer"
+                  },
+                  "status": {
+                    "type": "integer",
+                    "description": "статично 1"
+                  },
+                  "basePos": {
+                    "type": "object",
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "version": {
+                    "type": "integer",
+                    "description": "статично 2"
+                  },
+                  "textAngle": {
+                    "type": "number",
+                    "description": "поворот (заполнять)"
+                  },
+                  "textRotation": {
+                    "type": "integer",
+                    "description": "всегда 0"
+                  },
+                  "streetLightMountType": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2x/pole/data": {
+      "get": {
+        "summary": "/v2x/pole/data",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-examples": {
+                    "Example 1": {
+                      "feature_id": "string",
+                      "mode": "string",
+                      "type": "string",
+                      "height": 0,
+                      "status": 0,
+                      "basePos": {
+                        "x": 0,
+                        "y": 0
+                      },
+                      "version": 0,
+                      "textAngle": 0,
+                      "textRotation": 0,
+                      "streetLightMountType": "string"
+                    }
+                  },
+                  "properties": {
+                    "feature_id": {
+                      "type": "string"
+                    },
+                    "mode": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "height": {
+                      "type": "integer"
+                    },
+                    "status": {
+                      "type": "integer"
+                    },
+                    "basePos": {
+                      "type": "object",
+                      "properties": {
+                        "x": {
+                          "type": "integer"
+                        },
+                        "y": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "version": {
+                      "type": "integer"
+                    },
+                    "textAngle": {
+                      "type": "integer"
+                    },
+                    "textRotation": {
+                      "type": "integer"
+                    },
+                    "streetLightMountType": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-v2x-pole-data",
+        "x-stoplight": {
+          "id": "bvy7gkj4zpk1t"
+        }
+      }
     }
   },
   "components": {
