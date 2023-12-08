@@ -1559,6 +1559,18 @@
                           },
                           "type": "number"
                         }
+                      },
+                      "s_p": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "rswjvkkkifl5p"
+                        }
+                      },
+                      "e_p": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "ta5btseow3s9l"
+                        }
                       }
                     }
                   }
@@ -1583,7 +1595,9 @@
                         "geom_wgs84": [
                           0,
                           0
-                        ]
+                        ],
+                        "s_p": "string",
+                        "e_p": "string"
                       }
                     ]
                   }
