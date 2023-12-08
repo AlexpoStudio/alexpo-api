@@ -1219,9 +1219,7 @@
                                 "id": "rl2y1d2hxoyeg"
                               },
                               "type": "number",
-                              "example": 31.954249958507717,
-                              "exclusiveMaximum": 1,
-                              "exclusiveMinimum": 2
+                              "example": 31.954249958507717
                             }
                           }
                         }
