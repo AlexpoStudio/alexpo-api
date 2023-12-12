@@ -350,6 +350,30 @@
                         "id": "zxm9vfbnjcomm"
                       }
                     }
+                  },
+                  "tc": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "1yh8r7x9lpdyp"
+                    },
+                    "items": {
+                      "$ref": "#/components/schemas/ivi-message-ivi-optional-tc",
+                      "x-stoplight": {
+                        "id": "ck2jwlahwf11m"
+                      }
+                    }
+                  },
+                  "lac": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "mfnq0cs6lvxkk"
+                    },
+                    "items": {
+                      "$ref": "#/components/schemas/ivi-message-ivi-optional-lac",
+                      "x-stoplight": {
+                        "id": "mmjfyf27takz9"
+                      }
+                    }
                   }
                 }
               }
@@ -1980,6 +2004,239 @@
           }
         },
         "description": "ranges - VehicleCharacteristicsRanges (WITH COMPONENTS {comparisonOperator, limits (WITH COMPONENTS {..., exhaustEmissionValues ABSENT, dieselEmissionValues ABSENT, soundLevel ABSENT})})"
+      },
+      "ivi-message-ivi-optional-tc": {
+        "title": "ivi-message-ivi-optional-tc",
+        "x-stoplight": {
+          "id": "ri3gnpj0izofw"
+        },
+        "type": "object",
+        "properties": {
+          "detectionZoneIds": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "f0v9c610p7h8m"
+            },
+            "description": "Zid::= INTEGER (1..32,...)",
+            "items": {
+              "x-stoplight": {
+                "id": "0yybdhts2vyi4"
+              },
+              "type": "integer"
+            }
+          },
+          "relevanceZoneIds": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "oa398wlfj90j6"
+            },
+            "description": "Zid::= INTEGER (1..32,...)",
+            "items": {
+              "x-stoplight": {
+                "id": "vmlvfoa7dddbt"
+              },
+              "type": "integer"
+            }
+          },
+          "direction": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "sz5kj2kpi1nrd"
+            },
+            "description": "Direction::= INTEGER{\r\n\r\nsameDirection (0),\r\n\r\noppositeDirection (1),\r\n\r\nbothDirections (2),\r\n\r\nvalueNotUsed (3)\r\n\r\n} (0..3)"
+          },
+          "driverAwarenessZoneIds": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "bqfdd28t5qahs"
+            },
+            "description": "Zid::= INTEGER (1..32,...)",
+            "items": {
+              "x-stoplight": {
+                "id": "zzjeed66g9bx8"
+              },
+              "type": "integer"
+            }
+          },
+          "minimumAwarenessTime": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "5kl64rzca9hkz"
+            },
+            "description": "Время в десятых долях секунды до входа автомобиля в релевантную зону, в которой как минимум должен быть доступен IVI."
+          },
+          "applicableLanes": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "ro1hrpqpah3g6"
+            },
+            "description": "LanePosition ::= INTEGER {offTheRoad(-1), hardShoulder(0), outermostDrivingLane(1), secondLaneFromOutside(2)} (-1..14)\r\n\r\nЭтот DE указывает информацию о поперечном положении на дороге в разрешении полос, отсчитываемых от внешней границы дороги для данного направления движения. Значение -1 означает, что указанная позиция находится за пределами дороги.",
+            "items": {
+              "x-stoplight": {
+                "id": "0047uq1o60pvj"
+              },
+              "type": "integer"
+            }
+          },
+          "layoutId": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "ys85sqlokueyw"
+            }
+          },
+          "preStoredlayoutId": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "ijbqj18caocgo"
+            }
+          },
+          "text": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "slk389uryn00u"
+            },
+            "properties": {
+              "layoutComponentId": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "u42qnxdc4bke7"
+                }
+              },
+              "language": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "jxcj0s8oqv86n"
+                }
+              },
+              "textContent": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "5tz0jx7jvfhd5"
+                }
+              }
+            },
+            "required": [
+              "language",
+              "textContent"
+            ]
+          },
+          "data": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "p3fnoutpvsa90"
+            }
+          }
+        },
+        "required": [
+          "detectionZoneIds",
+          "relevanceZoneIds",
+          "data"
+        ],
+        "description": "tc"
+      },
+      "ivi-message-ivi-optional-lac": {
+        "title": "ivi-message-ivi-optional-lac",
+        "x-stoplight": {
+          "id": "9vumtf88yjkpk"
+        },
+        "type": "object",
+        "description": "lac",
+        "properties": {
+          "layoutId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "ido1vv9yxr0r9"
+            }
+          },
+          "height": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "r1stdb9e9izh7"
+            }
+          },
+          "width": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "4n3j3n1l8mfbe"
+            }
+          },
+          "layoutComponents": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "bns2c57g0ti0h"
+            },
+            "items": {
+              "$ref": "#/components/schemas/dicti-LayoutComponent",
+              "x-stoplight": {
+                "id": "y7r2njyytbv1j"
+              }
+            }
+          }
+        },
+        "required": [
+          "layoutId",
+          "layoutComponents"
+        ]
+      },
+      "dicti-LayoutComponent": {
+        "title": "dicti-LayoutComponent",
+        "x-stoplight": {
+          "id": "fwmi3c0c9mo0a"
+        },
+        "type": "object",
+        "description": "LayoutComponent",
+        "properties": {
+          "layoutComponentId": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "cpxc2cdawg5yf"
+            },
+            "description": "INTEGER(1..8,...)"
+          },
+          "height": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "hybm1yf8cyr45"
+            },
+            "description": "INTEGER(10..73)"
+          },
+          "width": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "anuhp3uh8a4ap"
+            },
+            "description": "INTEGER(10..265)"
+          },
+          "x": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "rb3cma49enpfc"
+            },
+            "description": "INTEGER(10..265)"
+          },
+          "y": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "r5ozhfojv36gw"
+            },
+            "description": "INTEGER(10..73)"
+          },
+          "textScripting": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "brvajhc562cbb"
+            },
+            "description": "INTEGER(10..73), textScripting INTEGER {horizontal (0), vertical (1)}(0..1)"
+          }
+        },
+        "required": [
+          "layoutComponentId",
+          "height",
+          "width",
+          "x",
+          "y",
+          "textScripting"
+        ]
       }
     }
   }
