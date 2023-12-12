@@ -324,6 +324,32 @@
                     "x-stoplight": {
                       "id": "pcuxo4d7hp7ua"
                     }
+                  },
+                  "gic": {
+                    "x-stoplight": {
+                      "id": "h3n57h7b9cfjk"
+                    },
+                    "type": "array",
+                    "description": "????\r\ngiv (по документации gic, но с ним не работает)",
+                    "items": {
+                      "$ref": "#/components/schemas/ivi-message-ivi-optional-gic",
+                      "x-stoplight": {
+                        "id": "szcxr1y1pa26c"
+                      }
+                    }
+                  },
+                  "rcc": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "p7huqvi1bf136"
+                    },
+                    "description": "https://wiki.stdev.ru/download/attachments/473467502/image2020-9-22_11-15-39.png?version=1&modificationDate=1600847295000&api=v2",
+                    "items": {
+                      "$ref": "#/components/schemas/ivi-message-ivi-optional-rcc",
+                      "x-stoplight": {
+                        "id": "zxm9vfbnjcomm"
+                      }
+                    }
                   }
                 }
               }
@@ -777,6 +803,7 @@
           "id": "jst0h1wfqvorm"
         },
         "type": "object",
+        "description": "gic",
         "properties": {
           "detectionZoneIds": {
             "type": "array",
@@ -891,9 +918,51 @@
               "id": "8fu42tl1bvcfd"
             },
             "description": "INTEGER(1..64,...)"
+          },
+          "roadSignCodes": {
+            "$ref": "#/components/schemas/ivi-message-ivi-optional-gic-roadSignCodes",
+            "x-stoplight": {
+              "id": "nm5ra9fbdxnfx"
+            }
+          },
+          "extraText": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "qqzyiym75rczo"
+            },
+            "description": "Список текстовых строк, связанных с упорядоченным списком кодов дорожных знаков. Каждая часть содержит код языка плюс\r\nдополнительный текст ограниченного размера на выбранном языке с помощью DF Text.\r\n\r\nSEQUENCE (SIZE (1..4),...) OF Text (WITH COMPONENTS {layoutComponentId, language, textContent (SIZE(1..32))})",
+            "items": {
+              "x-stoplight": {
+                "id": "fqchet4hw1a0l"
+              },
+              "type": "object",
+              "properties": {
+                "layoutComponentId": {
+                  "type": "integer",
+                  "x-stoplight": {
+                    "id": "44yxu1zv4h7vo"
+                  }
+                },
+                "language": {
+                  "type": "string",
+                  "x-stoplight": {
+                    "id": "cp94tgkrt3k2n"
+                  }
+                },
+                "textContent": {
+                  "type": "string",
+                  "x-stoplight": {
+                    "id": "h3a7cjoh7s33z"
+                  }
+                }
+              },
+              "required": [
+                "language",
+                "textContent"
+              ]
+            }
           }
-        },
-        "description": "gic"
+        }
       },
       "ivi-message-ivi-optional-gic-roadSignCodes": {
         "title": "ivi-message-ivi-optional-gic-roadSignCodes",
@@ -936,6 +1005,136 @@
           "id": "1z8yul0ut2e2y"
         },
         "type": "object",
+        "examples": [
+          {
+            "pictogramCode": {
+              "countryCode": "string",
+              "serviceCategoryCode": "string",
+              "pictogramCategoryCode": {
+                "nature": 0,
+                "serialNumber": 0
+              }
+            },
+            "attributes": {
+              "dtm": {
+                "hei": {
+                  "value": 0,
+                  "unit": 0
+                },
+                "wid": {
+                  "value": 0,
+                  "unit": 0
+                },
+                "vln": {
+                  "value": 0,
+                  "unit": 0
+                },
+                "wei": {
+                  "value": 0,
+                  "unit": 0
+                }
+              },
+              "edt": {
+                "year": {
+                  "syr": 0,
+                  "eyr": 0
+                },
+                "month-day": {
+                  "smd": {
+                    "month": 0,
+                    "day": 0
+                  },
+                  "emd": {
+                    "month": 0,
+                    "day": 0
+                  }
+                },
+                "pmd": "string",
+                "hourMinutes": {
+                  "shm": {
+                    "hours": 0,
+                    "mins": 0
+                  },
+                  "ehm": {
+                    "hours": 0,
+                    "mins": 0
+                  }
+                },
+                "dayOfWeek": 0,
+                "period": {
+                  "hours": 0,
+                  "mins": 0
+                }
+              },
+              "dfl": 0,
+              "ved": {
+                "hei": {
+                  "value": 0,
+                  "unit": 0
+                },
+                "wid": {
+                  "value": 0,
+                  "unit": 0
+                },
+                "vln": {
+                  "value": 0,
+                  "unit": 0
+                },
+                "wei": {
+                  "value": 0,
+                  "unit": 0
+                }
+              },
+              "spe": {
+                "spm": 0,
+                "mns": 0,
+                "unit": 0
+              },
+              "roi": 0,
+              "dbv": {
+                "value": 0,
+                "unit": 0
+              },
+              "ddd": {
+                "dcj": 0,
+                "dcr": 0,
+                "tpl": 0,
+                "ioList": [
+                  {
+                    "drn": 0,
+                    "dp": [
+                      {
+                        "depType": 0,
+                        "depRSCode": "string",
+                        "depBlob": "string",
+                        "plnId": 0,
+                        "plnText": "string"
+                      }
+                    ],
+                    "dr": [
+                      {
+                        "derType": 0,
+                        "ronId": 0,
+                        "ronText": "string"
+                      }
+                    ],
+                    "rne": 0,
+                    "stnId": 0,
+                    "stnText": "string",
+                    "dcp": {
+                      "value": 0,
+                      "unit": 0
+                    },
+                    "ddp": {
+                      "value": 0,
+                      "unit": 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ],
         "properties": {
           "pictogramCode": {
             "type": "object",
@@ -1029,107 +1228,11 @@
                 }
               },
               "edt": {
-                "type": "object",
+                "$ref": "#/components/schemas/dicti-DTM",
                 "x-stoplight": {
                   "id": "5g55xbt9umtaj"
                 },
-                "description": "Exemption status of Date/Time/Period",
-                "properties": {
-                  "year": {
-                    "type": "object",
-                    "x-stoplight": {
-                      "id": "itdf0spbp27ki"
-                    },
-                    "properties": {
-                      "syr": {
-                        "type": "integer",
-                        "x-stoplight": {
-                          "id": "3znsfdijamskt"
-                        },
-                        "description": "INTEGER(2000..2127,...)"
-                      },
-                      "eyr": {
-                        "type": "integer",
-                        "x-stoplight": {
-                          "id": "93pw0s3j78uc5"
-                        },
-                        "description": "INTEGER(2000..2127,...)"
-                      }
-                    },
-                    "required": [
-                      "syr",
-                      "eyr"
-                    ]
-                  },
-                  "month-day": {
-                    "type": "object",
-                    "x-stoplight": {
-                      "id": "y5vmg2bdous8j"
-                    },
-                    "properties": {
-                      "smd": {
-                        "$ref": "#/components/schemas/dicti-month-day",
-                        "x-stoplight": {
-                          "id": "92s5tva264yse"
-                        }
-                      },
-                      "emd": {
-                        "$ref": "#/components/schemas/dicti-month-day",
-                        "x-stoplight": {
-                          "id": "vjkirj1s69wb2"
-                        }
-                      }
-                    },
-                    "required": [
-                      "smd",
-                      "emd"
-                    ]
-                  },
-                  "pmd": {
-                    "type": "string",
-                    "x-stoplight": {
-                      "id": "vbv5rqgyj7pyo"
-                    },
-                    "description": "PMD::= BIT STRING {national-holiday (0), even-days(1), odd-days(2), market-day(3) } (SIZE (4))"
-                  },
-                  "hourMinutes": {
-                    "type": "object",
-                    "x-stoplight": {
-                      "id": "mxyrartoo2fm4"
-                    },
-                    "properties": {
-                      "shm": {
-                        "$ref": "#/components/schemas/dicti-hours-mins",
-                        "x-stoplight": {
-                          "id": "p2cc6tpjd39la"
-                        }
-                      },
-                      "ehm": {
-                        "$ref": "#/components/schemas/dicti-hours-mins",
-                        "x-stoplight": {
-                          "id": "9q2qbbgf3ob22"
-                        }
-                      }
-                    },
-                    "required": [
-                      "shm",
-                      "ehm"
-                    ]
-                  },
-                  "dayOfWeek": {
-                    "type": "integer",
-                    "x-stoplight": {
-                      "id": "ahfnrri7z9ydi"
-                    },
-                    "description": "DayOfWeek ::= BIT STRING {unused(0), monday(1), tuesday(2), wednesday(3), thursday(4), friday(5), saturday(6), sunday(7)} (SIZE (8))"
-                  },
-                  "period": {
-                    "$ref": "#/components/schemas/dicti-hours-mins",
-                    "x-stoplight": {
-                      "id": "flz4ugmdue0pu"
-                    }
-                  }
-                }
+                "description": "Exemption status of Date/Time/Period"
               },
               "dfl": {
                 "type": "integer",
@@ -1505,6 +1608,378 @@
         "required": [
           "ioList"
         ]
+      },
+      "ivi-message-ivi-optional-rcc": {
+        "title": "ivi-message-ivi-optional-rcc",
+        "x-stoplight": {
+          "id": "az47ovzgkxhep"
+        },
+        "type": "object",
+        "description": "rcc",
+        "properties": {
+          "zoneIds": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "bjcrp49fyfb4y"
+            },
+            "description": "Zid::= INTEGER (1..32,...)",
+            "items": {
+              "x-stoplight": {
+                "id": "b04uxlz42koy8"
+              },
+              "type": "integer"
+            }
+          },
+          "roadType": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "gr5dat1cjokrf"
+            },
+            "description": "RoadType ::= ENUMERATED {\r\nurban-NoStructuralSeparationToOppositeLanes(0),\r\nurban-WithStructuralSeparationToOppositeLanes(1),\r\nnonUrban-NoStructuralSeparationToOppositeLanes(2),\r\nnonUrban-WithStructuralSeparationToOppositeLanes(3)}"
+          },
+          "laneConfiguration": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "8emy14mvpwelq"
+            },
+            "items": {
+              "x-stoplight": {
+                "id": "ij064lvy229ms"
+              },
+              "type": "object",
+              "properties": {
+                "laneNumber": {
+                  "type": "integer",
+                  "x-stoplight": {
+                    "id": "xx7wglehq8bd0"
+                  }
+                },
+                "direction": {
+                  "type": "integer",
+                  "x-stoplight": {
+                    "id": "qtaqktcdhgas0"
+                  },
+                  "description": "Direction::= INTEGER{\r\n\r\nsameDirection (0),\r\n\r\noppositeDirection (1),\r\n\r\nbothDirections (2),\r\n\r\nvalueNotUsed (3)\r\n\r\n} (0..3)"
+                },
+                "validity": {
+                  "$ref": "#/components/schemas/dicti-DTM",
+                  "x-stoplight": {
+                    "id": "ybzq3fpilmy5k"
+                  }
+                },
+                "laneType": {
+                  "type": "integer",
+                  "x-stoplight": {
+                    "id": "6glfiik0kloe9"
+                  },
+                  "description": "LaneType::= INTEGER{\r\n\r\ntraffic (0),\r\n\r\nthrough (1),\r\n\r\nreversible (2),\r\n\r\nacceleration (3),\r\n\r\ndeceleration (4),\r\n\r\nleftHandTurning (5),\r\n\r\nrightHandTurning (6),\r\n\r\ndedicatedVehicle (7),\r\n\r\nbus (8),\r\n\r\ntaxi (9),\r\n\r\nhov (10),\r\n\r\nhot (11),\r\n\r\npedestrian (12),\r\n\r\nbikeLane (13),\r\n\r\nmedian (14),\r\n\r\nstriping (15),\r\n\r\ntrackedVehicle (16),\r\n\r\nparking (17),\r\n\r\nemergency (18),\r\n\r\nverge (19)\r\n\r\n-- values 20 to 31 reserved for future use\r\n\r\n}(0..31)"
+                },
+                "laneTypeQualifier": {
+                  "$ref": "#/components/schemas/dicti-CompleteVehicleCharacteristics",
+                  "x-stoplight": {
+                    "id": "trfdofpolpzt4"
+                  }
+                },
+                "laneStatus": {
+                  "type": "integer",
+                  "x-stoplight": {
+                    "id": "gd4gy01vr7aa2"
+                  },
+                  "description": "LaneStatus::= INTEGER {\r\n\r\nopen (0),\r\n\r\nclosed (1),\r\n\r\nmergeR (2),\r\n\r\nmergeL (3),\r\n\r\nmergeLR (4),\r\n\r\nprovisionallyOpen (5),\r\n\r\ndiverging (6)\r\n\r\n-- value 7 reserved for future use\r\n\r\n} (0..7, ...)"
+                },
+                "laneWidth": {
+                  "type": "integer",
+                  "x-stoplight": {
+                    "id": "qba1ghcyotsw0"
+                  },
+                  "description": "LaneWidth::= INTEGER (0..1023)\r\n\r\nИзмеряется в сантиметрах"
+                }
+              },
+              "required": [
+                "direction",
+                "laneType",
+                "laneStatus"
+              ]
+            }
+          }
+        },
+        "required": [
+          "zoneIds",
+          "laneConfiguration"
+        ]
+      },
+      "dicti-DTM": {
+        "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "year": {
+              "syr": 0,
+              "eyr": 0
+            },
+            "month-day": {
+              "smd": {
+                "month": 0,
+                "day": 0
+              },
+              "emd": {
+                "month": 0,
+                "day": 0
+              }
+            },
+            "pmd": "string",
+            "hourMinutes": {
+              "shm": {
+                "hours": 0,
+                "mins": 0
+              },
+              "ehm": {
+                "hours": 0,
+                "mins": 0
+              }
+            },
+            "dayOfWeek": 0,
+            "period": {
+              "hours": 0,
+              "mins": 0
+            }
+          }
+        },
+        "title": "dicti-DTM",
+        "description": "DTM",
+        "properties": {
+          "year": {
+            "type": "object",
+            "properties": {
+              "syr": {
+                "type": "integer",
+                "description": "INTEGER(2000..2127,...)"
+              },
+              "eyr": {
+                "type": "integer",
+                "description": "INTEGER(2000..2127,...)"
+              }
+            },
+            "required": [
+              "syr",
+              "eyr"
+            ]
+          },
+          "month-day": {
+            "type": "object",
+            "properties": {
+              "smd": {
+                "$ref": "#/components/schemas/dicti-month-day"
+              },
+              "emd": {
+                "$ref": "#/components/schemas/dicti-month-day"
+              }
+            },
+            "required": [
+              "smd",
+              "emd"
+            ]
+          },
+          "pmd": {
+            "type": "string",
+            "description": "PMD::= BIT STRING {national-holiday (0), even-days(1), odd-days(2), market-day(3) } (SIZE (4))"
+          },
+          "hourMinutes": {
+            "type": "object",
+            "properties": {
+              "shm": {
+                "$ref": "#/components/schemas/dicti-hours-mins"
+              },
+              "ehm": {
+                "$ref": "#/components/schemas/dicti-hours-mins"
+              }
+            },
+            "required": [
+              "shm",
+              "ehm"
+            ]
+          },
+          "dayOfWeek": {
+            "type": "integer",
+            "description": "DayOfWeek ::= BIT STRING {unused(0), monday(1), tuesday(2), wednesday(3), thursday(4), friday(5), saturday(6), sunday(7)} (SIZE (8))"
+          },
+          "period": {
+            "$ref": "#/components/schemas/dicti-hours-mins"
+          }
+        }
+      },
+      "dicti-CompleteVehicleCharacteristics": {
+        "title": "dicti-CompleteVehicleCharacteristics",
+        "x-stoplight": {
+          "id": "32griq8mf2jro"
+        },
+        "type": "object",
+        "properties": {
+          "tractor": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "wdhwxo6vfyzpx"
+            },
+            "properties": {
+              "equalTo": {
+                "x-stoplight": {
+                  "id": "s8vgyeup5oe6d"
+                },
+                "type": "array",
+                "description": "VehicleCharacteristicsFixValues::= CHOICE{\r\n\r\nsimpleVehicleType StationType,\r\n\r\neuVehicleCategoryCode EuVehicleCategoryCode,\r\n\r\niso3833VehicleType Iso3833VehicleType,\r\n\r\neuroAndCo2value EnvironmentalCharacteristics,\r\n\r\nengineCharacteristics EngineCharacteristics,\r\n\r\nloadType LoadType,\r\n\r\nusage VehicleRole,\r\n\r\n...}",
+                "items": {
+                  "x-stoplight": {
+                    "id": "8zcdmoac88kax"
+                  },
+                  "type": "string"
+                }
+              },
+              "notEqualTo": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "c4gxub8bm33hl"
+                },
+                "description": "VehicleCharacteristicsFixValues::= CHOICE{\r\n\r\nsimpleVehicleType StationType,\r\n\r\neuVehicleCategoryCode EuVehicleCategoryCode,\r\n\r\niso3833VehicleType Iso3833VehicleType,\r\n\r\neuroAndCo2value EnvironmentalCharacteristics,\r\n\r\nengineCharacteristics EngineCharacteristics,\r\n\r\nloadType LoadType,\r\n\r\nusage VehicleRole,\r\n\r\n...}",
+                "items": {
+                  "x-stoplight": {
+                    "id": "18zj5s341zjkc"
+                  },
+                  "type": "string"
+                }
+              },
+              "ranges": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "bp8aopsh1rgod"
+                },
+                "description": "VehicleCharacteristicsFixValues::= CHOICE{\r\n\r\nsimpleVehicleType StationType,\r\n\r\neuVehicleCategoryCode EuVehicleCategoryCode,\r\n\r\niso3833VehicleType Iso3833VehicleType,\r\n\r\neuroAndCo2value EnvironmentalCharacteristics,\r\n\r\nengineCharacteristics EngineCharacteristics,\r\n\r\nloadType LoadType,\r\n\r\nusage VehicleRole,\r\n\r\n...}",
+                "items": {
+                  "$ref": "#/components/schemas/dicti-ranges",
+                  "x-stoplight": {
+                    "id": "ccukx5kl8o0fo"
+                  }
+                }
+              }
+            }
+          },
+          "trailer": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "8zfpvahgm9186"
+            },
+            "properties": {
+              "equalTo": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "vks828jz0frio"
+                },
+                "description": "VehicleCharacteristicsFixValues (WITH COMPONENTS {..., euroAndCo2value ABSENT, engineCharacteristics ABSENT})",
+                "items": {
+                  "x-stoplight": {
+                    "id": "e5dc1u8u67cc3"
+                  },
+                  "type": "string"
+                }
+              },
+              "notEqualTo": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "4cxljnd8rv5fh"
+                },
+                "description": "VehicleCharacteristicsFixValues (WITH COMPONENTS {..., euroAndCo2value ABSENT, engineCharacteristics ABSENT})",
+                "items": {
+                  "x-stoplight": {
+                    "id": "gkel25gqcv36e"
+                  },
+                  "type": "string"
+                }
+              },
+              "ranges": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "o6w579g94j3ek"
+                },
+                "description": "VehicleCharacteristicsRanges (WITH COMPONENTS {comparisonOperator, limits (WITH COMPONENTS {..., exhaustEmissionValues ABSENT, dieselEmissionValues ABSENT, soundLevel ABSENT})})",
+                "items": {
+                  "$ref": "#/components/schemas/dicti-ranges",
+                  "x-stoplight": {
+                    "id": "72b98zgi9shxj"
+                  }
+                }
+              }
+            }
+          },
+          "train": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "jxwccnnynhcwc"
+            },
+            "properties": {
+              "equalTo": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "6hsi2jduprydp"
+                },
+                "description": "VehicleCharacteristicsFixValues::= CHOICE{\r\n\r\nsimpleVehicleType StationType,\r\n\r\neuVehicleCategoryCode EuVehicleCategoryCode,\r\n\r\niso3833VehicleType Iso3833VehicleType,\r\n\r\neuroAndCo2value EnvironmentalCharacteristics,\r\n\r\nengineCharacteristics EngineCharacteristics,\r\n\r\nloadType LoadType,\r\n\r\nusage VehicleRole,\r\n\r\n...}",
+                "items": {
+                  "x-stoplight": {
+                    "id": "z9mda24wbxx9v"
+                  },
+                  "type": "string"
+                }
+              },
+              "notEqualTo": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "8uiux09k1ky1w"
+                },
+                "description": "VehicleCharacteristicsFixValues::= CHOICE{\r\n\r\nsimpleVehicleType StationType,\r\n\r\neuVehicleCategoryCode EuVehicleCategoryCode,\r\n\r\niso3833VehicleType Iso3833VehicleType,\r\n\r\neuroAndCo2value EnvironmentalCharacteristics,\r\n\r\nengineCharacteristics EngineCharacteristics,\r\n\r\nloadType LoadType,\r\n\r\nusage VehicleRole,\r\n\r\n...}",
+                "items": {
+                  "x-stoplight": {
+                    "id": "0ib1u6blrhc9w"
+                  },
+                  "type": "string"
+                }
+              },
+              "ranges": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "krta5skgnh6gn"
+                },
+                "description": "VehicleCharacteristicsRanges (WITH COMPONENTS {comparisonOperator, limits (WITH COMPONENTS {..., exhaustEmissionValues ABSENT, dieselEmissionValues ABSENT, soundLevel ABSENT})})",
+                "items": {
+                  "$ref": "#/components/schemas/dicti-ranges",
+                  "x-stoplight": {
+                    "id": "du1xni5ty6o2g"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "dicti-ranges": {
+        "title": "dicti-ranges",
+        "x-stoplight": {
+          "id": "z0jp5278unlz8"
+        },
+        "type": "object",
+        "properties": {
+          "comparisonOperator": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "avfrr2grm7swc"
+            },
+            "description": "ComparisonOperator::= INTEGER {\r\n\r\ngreaterThan (0),\r\n\r\ngreaterThanOrEqualTo (1),\r\n\r\nlessThan (2),\r\n\r\nlessThanOrEqualTo (3)\r\n\r\n} (0..3)"
+          },
+          "limits": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "8541hva0ujyje"
+            },
+            "description": "CHOICE{\r\n\r\nnumberOfAxles INTEGER(0..7),\r\n\r\nvehicleDimensions VehicleDimensions,\r\n\r\nvehicleWeightLimits VehicleWeightLimits,\r\n\r\naxleWeightLimits AxleWeightLimits,\r\n\r\npassengerCapacity PassengerCapacity,\r\n\r\nexhaustEmissionValues ExhaustEmissionValues,\r\n\r\ndieselEmissionValues DieselEmissionValues,\r\n\r\nsoundLevel SoundLevel,\r\n\r\n...}}"
+          }
+        },
+        "description": "ranges - VehicleCharacteristicsRanges (WITH COMPONENTS {comparisonOperator, limits (WITH COMPONENTS {..., exhaustEmissionValues ABSENT, dieselEmissionValues ABSENT, soundLevel ABSENT})})"
       }
     }
   }
