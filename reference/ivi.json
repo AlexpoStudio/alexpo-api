@@ -176,43 +176,6 @@
           "id": "4z1zk8eu599ms"
         },
         "type": "object",
-        "examples": [
-          {
-            "referencePosition": {
-              "latitude": 0,
-              "longitude": 0,
-              "positionConfidenceEllipse": {
-                "semiMajorConfidence": 0,
-                "semiMinorConfidence": 0,
-                "semiMajorOrientation": 0
-              },
-              "altitude": {
-                "altitudeValue": 0,
-                "altitudeConfidence": 0
-              }
-            },
-            "referencePositionTime": 0,
-            "referencePositionHeading": {
-              "headingValue": 0,
-              "headingConfidence": 0
-            },
-            "referencePositionSpeed": {
-              "speedValue": 0,
-              "speedConfidence": 0
-            },
-            "parts": [
-              {
-                "zoneId": 0,
-                "laneNumber": 0,
-                "zoneExtension": 0,
-                "zoneHeading": {
-                  "headingValue": 0,
-                  "headingConfidence": 0
-                }
-              }
-            ]
-          }
-        ],
         "properties": {
           "referencePosition": {
             "$ref": "#/components/schemas/ivi-message-ivi-optional-glc-referencePosition",
@@ -285,6 +248,180 @@
         "required": [
           "referencePosition",
           "parts"
+        ],
+        "examples": [
+          {
+            "referencePosition": {
+              "referencePosition": {
+                "latitude": 0,
+                "longitude": 0,
+                "positionConfidenceEllipse": {
+                  "semiMajorConfidence": 0,
+                  "semiMinorConfidence": 0,
+                  "semiMajorOrientation": 0
+                },
+                "altitude": {
+                  "altitudeValue": 0,
+                  "altitudeConfidence": 0
+                }
+              }
+            },
+            "referencePositionTime": 0,
+            "referencePositionHeading": {
+              "headingValue": 0,
+              "headingConfidence": 0
+            },
+            "referencePositionSpeed": {
+              "speedValue": 0,
+              "speedConfidence": 0
+            },
+            "parts": [
+              {
+                "zoneId": 0,
+                "laneNumber": 0,
+                "zoneExtension": 0,
+                "zoneHeading": {
+                  "headingValue": 0,
+                  "headingConfidence": 0
+                },
+                "zone": {
+                  "segment": {
+                    "line": {
+                      "deltaPositions": [
+                        {
+                          "deltaLatitude": 0,
+                          "deltaLongitude": 0
+                        }
+                      ],
+                      "deltaPositionsWithAltitude": [
+                        {
+                          "deltaLatitude": 0,
+                          "deltaLongitude": 0
+                        }
+                      ],
+                      "absolutePositions": [
+                        {
+                          "latitude": 0,
+                          "longitude": 0
+                        }
+                      ],
+                      "absolutePositionsWithAltitude": [
+                        {
+                          "latitude": 0,
+                          "longitude": 0,
+                          "altitude": {
+                            "altitudeValue": 0,
+                            "altitudeConfidence": 0
+                          }
+                        }
+                      ]
+                    },
+                    "laneWidth": 0
+                  },
+                  "area": {
+                    "id": "string"
+                  },
+                  "computedSegment": {
+                    "zoneId": 0,
+                    "laneNumber": 0,
+                    "laneWidth": 0,
+                    "offsetDistance": 0,
+                    "offsetPosition": {
+                      "deltaLatitude": 0,
+                      "deltaLongitude": 0,
+                      "deltaAltitude": 0
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "referencePosition": {
+              "referencePosition": {
+                "latitude": 0,
+                "longitude": 0,
+                "positionConfidenceEllipse": {
+                  "semiMajorConfidence": 0,
+                  "semiMinorConfidence": 0,
+                  "semiMajorOrientation": 0
+                },
+                "altitude": {
+                  "altitudeValue": 0,
+                  "altitudeConfidence": 0
+                }
+              }
+            },
+            "referencePositionTime": 0,
+            "referencePositionHeading": {
+              "headingValue": 0,
+              "headingConfidence": 0
+            },
+            "referencePositionSpeed": {
+              "speedValue": 0,
+              "speedConfidence": 0
+            },
+            "parts": [
+              {
+                "zoneId": 0,
+                "laneNumber": 0,
+                "zoneExtension": 0,
+                "zoneHeading": {
+                  "headingValue": 0,
+                  "headingConfidence": 0
+                },
+                "zone": {
+                  "segment": {
+                    "line": {
+                      "deltaPositions": [
+                        {
+                          "deltaLatitude": 0,
+                          "deltaLongitude": 0
+                        }
+                      ],
+                      "deltaPositionsWithAltitude": [
+                        {
+                          "deltaLatitude": 0,
+                          "deltaLongitude": 0
+                        }
+                      ],
+                      "absolutePositions": [
+                        {
+                          "latitude": 0,
+                          "longitude": 0
+                        }
+                      ],
+                      "absolutePositionsWithAltitude": [
+                        {
+                          "latitude": 0,
+                          "longitude": 0,
+                          "altitude": {
+                            "altitudeValue": 0,
+                            "altitudeConfidence": 0
+                          }
+                        }
+                      ]
+                    },
+                    "laneWidth": 0
+                  },
+                  "area": {
+                    "id": "string"
+                  },
+                  "computedSegment": {
+                    "zoneId": 0,
+                    "laneNumber": 0,
+                    "laneWidth": 0,
+                    "offsetDistance": 0,
+                    "offsetPosition": {
+                      "deltaLatitude": 0,
+                      "deltaLongitude": 0,
+                      "deltaAltitude": 0
+                    }
+                  }
+                }
+              }
+            ]
+          }
         ]
       },
       "ivi-message": {
@@ -403,16 +540,18 @@
               "optional": {
                 "glc": {
                   "referencePosition": {
-                    "latitude": 0,
-                    "longitude": 0,
-                    "positionConfidenceEllipse": {
-                      "semiMajorConfidence": 0,
-                      "semiMinorConfidence": 0,
-                      "semiMajorOrientation": 0
-                    },
-                    "altitude": {
-                      "altitudeValue": 0,
-                      "altitudeConfidence": 0
+                    "referencePosition": {
+                      "latitude": 0,
+                      "longitude": 0,
+                      "positionConfidenceEllipse": {
+                        "semiMajorConfidence": 0,
+                        "semiMinorConfidence": 0,
+                        "semiMajorOrientation": 0
+                      },
+                      "altitude": {
+                        "altitudeValue": 0,
+                        "altitudeConfidence": 0
+                      }
                     }
                   },
                   "referencePositionTime": 0,
@@ -432,6 +571,55 @@
                       "zoneHeading": {
                         "headingValue": 0,
                         "headingConfidence": 0
+                      },
+                      "zone": {
+                        "segment": {
+                          "line": {
+                            "deltaPositions": [
+                              {
+                                "deltaLatitude": 0,
+                                "deltaLongitude": 0
+                              }
+                            ],
+                            "deltaPositionsWithAltitude": [
+                              {
+                                "deltaLatitude": 0,
+                                "deltaLongitude": 0
+                              }
+                            ],
+                            "absolutePositions": [
+                              {
+                                "latitude": 0,
+                                "longitude": 0
+                              }
+                            ],
+                            "absolutePositionsWithAltitude": [
+                              {
+                                "latitude": 0,
+                                "longitude": 0,
+                                "altitude": {
+                                  "altitudeValue": 0,
+                                  "altitudeConfidence": 0
+                                }
+                              }
+                            ]
+                          },
+                          "laneWidth": 0
+                        },
+                        "area": {
+                          "id": "string"
+                        },
+                        "computedSegment": {
+                          "zoneId": 0,
+                          "laneNumber": 0,
+                          "laneWidth": 0,
+                          "offsetDistance": 0,
+                          "offsetPosition": {
+                            "deltaLatitude": 0,
+                            "deltaLongitude": 0,
+                            "deltaAltitude": 0
+                          }
+                        }
                       }
                     }
                   ]
@@ -791,26 +979,26 @@
             "zone": {
               "type": "object",
               "x-stoplight": {
-                "id": "9a83fb6fwzx3f"
+                "id": "y8qztf5hvjmq7"
               },
               "description": "Один вариант из:\r\n\r\nsegment Segment,\r\n\r\narea PolygonalLine,\r\n\r\ncomputedSegment ComputedSegment",
               "properties": {
                 "segment": {
                   "$ref": "#/components/schemas/ivi-message-ivi-optional-glc-parts-segment",
                   "x-stoplight": {
-                    "id": "kwliwazeejxod"
+                    "id": "kqz2euhed3a93"
                   }
                 },
                 "area": {
                   "$ref": "#/components/schemas/ivi-message-ivi-optional-glc-parts-area",
                   "x-stoplight": {
-                    "id": "kmpb1hbpqjmiu"
+                    "id": "75imernstg4hg"
                   }
                 },
                 "computedSegment": {
                   "$ref": "#/components/schemas/ivi-message-ivi-optional-glc-parts-computedSegment",
                   "x-stoplight": {
-                    "id": "f5051q9euixdi"
+                    "id": "irmyeisdihnvj"
                   }
                 }
               }
@@ -819,7 +1007,69 @@
           "required": [
             "zoneId"
           ]
-        }
+        },
+        "examples": [
+          [
+            {
+              "zoneId": 0,
+              "laneNumber": 0,
+              "zoneExtension": 0,
+              "zoneHeading": {
+                "headingValue": 0,
+                "headingConfidence": 0
+              },
+              "zone": {
+                "segment": {
+                  "line": {
+                    "deltaPositions": [
+                      {
+                        "deltaLatitude": 0,
+                        "deltaLongitude": 0
+                      }
+                    ],
+                    "deltaPositionsWithAltitude": [
+                      {
+                        "deltaLatitude": 0,
+                        "deltaLongitude": 0
+                      }
+                    ],
+                    "absolutePositions": [
+                      {
+                        "latitude": 0,
+                        "longitude": 0
+                      }
+                    ],
+                    "absolutePositionsWithAltitude": [
+                      {
+                        "latitude": 0,
+                        "longitude": 0,
+                        "altitude": {
+                          "altitudeValue": 0,
+                          "altitudeConfidence": 0
+                        }
+                      }
+                    ]
+                  },
+                  "laneWidth": 0
+                },
+                "area": {
+                  "id": "string"
+                },
+                "computedSegment": {
+                  "zoneId": 0,
+                  "laneNumber": 0,
+                  "laneWidth": 0,
+                  "offsetDistance": 0,
+                  "offsetPosition": {
+                    "deltaLatitude": 0,
+                    "deltaLongitude": 0,
+                    "deltaAltitude": 0
+                  }
+                }
+              }
+            }
+          ]
+        ]
       },
       "ivi-message-ivi-optional-glc-referencePosition": {
         "type": "object",
