@@ -15,8 +15,11 @@
   "paths": {},
   "components": {
     "schemas": {
-      "ivi-message": {
+      "ivi-message-ivi-mandatory": {
         "type": "object",
+        "x-stoplight": {
+          "id": "27085b6398818"
+        },
         "x-examples": {
           "Example 1": {
             "ivi": {
