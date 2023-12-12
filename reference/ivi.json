@@ -368,7 +368,27 @@
               "x-stoplight": {
                 "id": "9a83fb6fwzx3f"
               },
-              "description": "Один вариант из:\r\n\r\nsegment Segment,\r\n\r\narea PolygonalLine,\r\n\r\ncomputedSegment ComputedSegment"
+              "description": "Один вариант из:\r\n\r\nsegment Segment,\r\n\r\narea PolygonalLine,\r\n\r\ncomputedSegment ComputedSegment",
+              "properties": {
+                "segment": {
+                  "$ref": "#/components/schemas/ivi-message-ivi-optional-glc-parts-segment",
+                  "x-stoplight": {
+                    "id": "kwliwazeejxod"
+                  }
+                },
+                "area": {
+                  "$ref": "#/components/schemas/ivi-message-ivi-optional-glc-parts-area",
+                  "x-stoplight": {
+                    "id": "kmpb1hbpqjmiu"
+                  }
+                },
+                "computedSegment": {
+                  "$ref": "#/components/schemas/ivi-message-ivi-optional-glc-parts-computedSegment",
+                  "x-stoplight": {
+                    "id": "f5051q9euixdi"
+                  }
+                }
+              }
             }
           },
           "required": [
