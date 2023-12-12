@@ -35,87 +35,97 @@
             }
           }
         },
+        "description": "ivi/mandatory",
         "properties": {
-          "ivi": {
+          "serviceProviderId": {
             "type": "object",
+            "x-stoplight": {
+              "id": "djkqfxjuuv5wc"
+            },
             "required": [
-              "mandatory"
+              "countryCode",
+              "providerIdentifier"
             ],
+            "description": "Идентифицирует организацию, предоставившую IVI, с помощью поставщика DE; содержит код страны согласно ISO 3166‑1. Числа должны быть\r\nназначаются по национальному признаку. Для регистрации см. ISO 14816.",
             "properties": {
-              "mandatory": {
-                "type": "object",
-                "required": [
-                  "serviceProviderId",
-                  "iviIdentificationNumber",
-                  "iviStatus"
-                ],
-                "properties": {
-                  "serviceProviderId": {
-                    "type": "object",
-                    "description": "Идентифицирует организацию, предоставившую IVI, с помощью поставщика DE; содержит код страны согласно ISO 3166‑1. Числа должны быть\r\nназначаются по национальному признаку. Для регистрации см. ISO 14816.",
-                    "required": [
-                      "countryCode",
-                      "providerIdentifier"
-                    ],
-                    "properties": {
-                      "countryCode": {
-                        "type": "string",
-                        "description": "указывает код страны по стандарту ISO 3166‑1.\r\n\r\nКодировка CountryCode для России определяется как «01010 11100».\r\nЭто определяется на основе таблицы\r\nhttps://wiki.stdev.ru/pages/viewpage.action?pageId=473467502"
-                      },
-                      "providerIdentifier": {
-                        "type": "integer",
-                        "description": "указывает идентификатор поставщика услуг как зарегистрированный"
-                      }
-                    }
-                  },
-                  "iviIdentificationNumber": {
-                    "type": "integer",
-                    "description": "IviIdentificationNumber::= INTEGER(1..32767,...)\r\n\r\nИдентификатор структуры IVI, присвоенный Поставщиком услуг с использованием DE.\r\nIviИдентификационный номер."
-                  },
-                  "timestamp": {
-                    "type": "integer",
-                    "description": "Количество миллисекунд с 2004-01-01T00:00:00.000Z\r\n\r\nОтметка времени создания или последних изменений информационного содержания."
-                  },
-                  "validFrom": {
-                    "type": "integer",
-                    "description": "Количество миллисекунд с 2004-01-01T00:00:00.000Z\r\n\r\nВремя начала периода действия сообщения."
-                  },
-                  "validTo": {
-                    "type": "integer",
-                    "x-stoplight": {
-                      "id": "avx7viot3hf5x"
-                    },
-                    "description": "Количество миллисекунд с 2004-01-01T00:00:00.000Z\r\n\r\nВремя окончания срока действия сообщения."
-                  },
-                  "connectedIviStructures": {
-                    "type": "array",
-                    "x-stoplight": {
-                      "id": "dhbjn4plnkkzm"
-                    },
-                    "description": "IviIdentificationNumber::= INTEGER(1..32767,...)\r\n\r\nСписок других iviIdentificationNumber, идентифицирующих другие структуры IVI того же органа, которые подключены к структуре IVI с помощью DE IviIdentificationNumber.",
-                    "items": {
-                      "x-stoplight": {
-                        "id": "cxqpvdry3w451"
-                      },
-                      "type": "integer"
-                    }
-                  },
-                  "iviStatus": {
-                    "type": "integer",
-                    "x-stoplight": {
-                      "id": "1palv1q38veh6"
-                    },
-                    "description": "IviStatus::= INTEGER {\r\n\r\nnew (0),\r\nupdate (1),\r\ncancellation (2),\r\nnegation (3)\r\n}(0..7)"
-                  }
-                }
+              "countryCode": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "muqd2hiqesvtt"
+                },
+                "description": "указывает код страны по стандарту ISO 3166‑1.\r\n\r\nКодировка CountryCode для России определяется как «01010 11100».\r\nЭто определяется на основе таблицы\r\nhttps://wiki.stdev.ru/pages/viewpage.action?pageId=473467502"
+              },
+              "providerIdentifier": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "8jf4zmibaxs0f"
+                },
+                "description": "указывает идентификатор поставщика услуг как зарегистрированный"
               }
             }
+          },
+          "iviIdentificationNumber": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "onp4o8jqhr22z"
+            },
+            "description": "указывает идентификатор поставщика услуг как зарегистрированный"
+          },
+          "timestamp": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "gvpb7ft4k5ccq"
+            },
+            "description": "Количество миллисекунд с 2004-01-01T00:00:00.000Z\r\n\r\nОтметка времени создания или последних изменений информационного содержания."
+          },
+          "validFrom": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "ff3ybfi7zzpas"
+            },
+            "description": "Количество миллисекунд с 2004-01-01T00:00:00.000Z\r\n\r\nВремя начала периода действия сообщения."
+          },
+          "validTo": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "zflzz0bafwu00"
+            },
+            "description": "IviIdentificationNumber::= INTEGER(1..32767,...)\r\n\r\nСписок других iviIdentificationNumber, идентифицирующих другие структуры IVI того же органа, которые подключены к структуре IVI с помощью DE IviIdentificationNumber."
+          },
+          "connectedIviStructures": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "nxw5aj769eicn"
+            },
+            "description": "IviIdentificationNumber::= INTEGER(1..32767,...)\r\n\r\nСписок других iviIdentificationNumber, идентифицирующих другие структуры IVI того же органа, которые подключены к структуре IVI с помощью DE IviIdentificationNumber."
+          },
+          "iviStatus": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "27znw25qrpvvh"
+            },
+            "description": "IviStatus::= INTEGER {\r\n\r\nnew (0),\r\nupdate (1),\r\ncancellation (2),\r\nnegation (3)\r\n}(0..7)"
           }
         },
         "required": [
-          "ivi"
+          "serviceProviderId",
+          "iviIdentificationNumber",
+          "iviStatus"
         ],
-        "description": "ivi/mandatory"
+        "examples": [
+          {
+            "serviceProviderId": {
+              "countryCode": "string",
+              "providerIdentifier": 0
+            },
+            "iviIdentificationNumber": 0,
+            "timestamp": 0,
+            "validFrom": 0,
+            "validTo": 0,
+            "connectedIviStructures": "string",
+            "iviStatus": 0
+          }
+        ]
       },
       "ivi-message-header": {
         "type": "object",
@@ -128,33 +138,169 @@
             }
           }
         },
+        "description": "header",
         "properties": {
-          "header": {
+          "protocolVersion": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "kkzkicuhlqwak"
+            },
+            "description": "Версия протокола."
+          },
+          "messageID": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "nng7gdffic15n"
+            }
+          },
+          "stationID": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "hdadetripm5gu"
+            },
+            "description": "Идентификатор станции.\r\n\r\nДля АСУДД отправляющей сообщение в качестве идентификатора станции должен быть установлен идентификатор этой АСУДД."
+          }
+        },
+        "required": [
+          "protocolVersion",
+          "messageID",
+          "stationID"
+        ]
+      },
+      "ivi-message-ivi-optional-glc": {
+        "title": "ivi-message-ivi-optional-glc",
+        "x-stoplight": {
+          "id": "4z1zk8eu599ms"
+        },
+        "type": "object",
+        "properties": {
+          "referencePosition": {
             "type": "object",
+            "x-stoplight": {
+              "id": "l7khstasdw57y"
+            },
             "required": [
-              "protocolVersion",
-              "messageID",
-              "stationID"
+              "latitude",
+              "longitude",
+              "positionConfidenceEllipse",
+              "altitude"
             ],
-            "description": "Версия протокола.",
             "properties": {
-              "protocolVersion": {
-                "type": "integer"
-              },
-              "messageID": {
-                "type": "integer"
-              },
-              "stationID": {
+              "latitude": {
                 "type": "integer",
-                "description": "Идентификатор станции.\r\n\r\nДля АСУДД отправляющей сообщение в качестве идентификатора станции должен быть установлен идентификатор этой АСУДД."
+                "x-stoplight": {
+                  "id": "fcofl31tfjagr"
+                },
+                "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10), unavailable(900000001) } (-900000000..900000001)\r\n\r\nAbsolute geographical latitude in a WGS84 coordinate system, providing a range of 90 degrees in north or in south hemisphere."
+              },
+              "longitude": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "qukdlj6ahdzbn"
+                },
+                "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10), unavailable(900000001) } (-900000000..900000001)\r\n\r\nAbsolute geographical latitude in a WGS84 coordinate system, providing a range of 90 degrees in north or in south hemisphere."
+              },
+              "positionConfidenceEllipse": {
+                "type": "object",
+                "x-stoplight": {
+                  "id": "pg73nsimteqc2"
+                },
+                "required": [
+                  "semiMajorConfidence",
+                  "semiMinorConfidence",
+                  "semiMajorOrientation"
+                ],
+                "properties": {
+                  "semiMajorConfidence": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "mhpkx3ectoqvi"
+                    },
+                    "description": "Значение должно быть установлено следующим образом:\r\n• 1, если точность равна или меньше 1 см,\r\n• n (n > 1 и n < 4093), если точность равна или меньше n см,\r\n• 4 093, если точность равна или меньше 4 093 см,\r\n• 4 094, если точность выходит за пределы допустимого диапазона, т. е. превышает 4 093 см,\r\n• 4 095, если информация о точности недоступна."
+                  },
+                  "semiMinorConfidence": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "oehb8pnn8osdb"
+                    },
+                    "description": "Значение должно быть установлено следующим образом:\r\n• 1, если точность равна или меньше 1 см,\r\n• n (n > 1 и n < 4093), если точность равна или меньше n см,\r\n• 4 093, если точность равна или меньше 4 093 см,\r\n• 4 094, если точность выходит за пределы допустимого диапазона, т. е. превышает 4 093 см,\r\n• 4 095, если информация о точности недоступна."
+                  },
+                  "semiMajorOrientation": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "scmua1ae1w0uw"
+                    },
+                    "description": "HeadingValue ::= INTEGER {wgs84North(0), wgs84East(900),\r\nwgs84South(1800), wgs84West(2700), unavailable(3601)} (0..3601)"
+                  }
+                }
+              },
+              "altitude": {
+                "type": "object",
+                "x-stoplight": {
+                  "id": "lp268c4mjduff"
+                },
+                "required": [
+                  "altitudeValue",
+                  "altitudeConfidence"
+                ],
+                "properties": {
+                  "altitudeValue": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "kamjbimlmr9eu"
+                    },
+                    "description": "INTEGER {referenceEllipsoidSurface(0),\r\noneCentimeter(1), unavailable(800001) } (-100000..800001)"
+                  },
+                  "altitudeConfidence": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "48oe9r5n35n1o"
+                    },
+                    "description": "Значение должно быть установлено следующим образом:\r\n• 0, если точность высоты равна или меньше 0,01 метра.\r\n• 1, если точность высоты равна или меньше 0,02 метра.\r\n• 2, если точность высоты равна или меньше 0,05 метра.\r\n• 3, если точность высоты равна или меньше 0,1 метра.\r\n• 4, если точность высоты равна или меньше 0,2 метра.\r\n• 5, если точность высоты равна или меньше 0,5 метра.\r\n• 6, если точность высоты равна или меньше 1 метра.\r\n• 7, если точность высоты равна или меньше 2 метров.\r\n• 8, если точность высоты равна или меньше 5 метров.\r\n• 9, если точность высоты равна или меньше 10 метров.\r\n• 10, если точность высоты равна или меньше 20 метров.\r\n• 11, если точность высоты равна или меньше 50 метров.\r\n• 12, если точность высоты равна или меньше 100 метров.\r\n• 13, если точность высоты равна или меньше 200 метров.\r\n• 14, если точность высоты выходит за пределы допустимого диапазона, т. е. превышает 200 метров.\r\n• 15, если информация о точности высоты недоступна."
+                  }
+                }
               }
+            }
+          },
+          "referencePositionTime": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "f9vmf624msybd"
             }
           }
         },
         "required": [
-          "header"
-        ],
-        "description": "header"
+          "referencePosition"
+        ]
+      },
+      "ivi-message": {
+        "title": "ivi-message",
+        "x-stoplight": {
+          "id": "gto8d8g4agyv8"
+        },
+        "type": "object",
+        "properties": {
+          "header": {
+            "$ref": "#/components/schemas/ivi-message-header",
+            "x-stoplight": {
+              "id": "ufgme2fgkns79"
+            }
+          },
+          "ivi": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "yq9be3po42jzq"
+            },
+            "properties": {
+              "mandatory": {
+                "$ref": "#/components/schemas/ivi-message-ivi-mandatory",
+                "x-stoplight": {
+                  "id": "e47lrxnl7pv1y"
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
