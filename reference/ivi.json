@@ -165,7 +165,10 @@
           "protocolVersion",
           "messageID",
           "stationID"
-        ]
+        ],
+        "x-stoplight": {
+          "id": "atj0cb8upixal"
+        }
       },
       "ivi-message-ivi-optional-glc": {
         "title": "ivi-message-ivi-optional-glc",
@@ -173,6 +176,43 @@
           "id": "4z1zk8eu599ms"
         },
         "type": "object",
+        "examples": [
+          {
+            "referencePosition": {
+              "latitude": 0,
+              "longitude": 0,
+              "positionConfidenceEllipse": {
+                "semiMajorConfidence": 0,
+                "semiMinorConfidence": 0,
+                "semiMajorOrientation": 0
+              },
+              "altitude": {
+                "altitudeValue": 0,
+                "altitudeConfidence": 0
+              }
+            },
+            "referencePositionTime": 0,
+            "referencePositionHeading": {
+              "headingValue": 0,
+              "headingConfidence": 0
+            },
+            "referencePositionSpeed": {
+              "speedValue": 0,
+              "speedConfidence": 0
+            },
+            "parts": [
+              {
+                "zoneId": 0,
+                "laneNumber": 0,
+                "zoneExtension": 0,
+                "zoneHeading": {
+                  "headingValue": 0,
+                  "headingConfidence": 0
+                }
+              }
+            ]
+          }
+        ],
         "properties": {
           "referencePosition": {
             "type": "object",
@@ -263,9 +303,58 @@
             }
           },
           "referencePositionTime": {
-            "type": "string",
+            "type": "integer",
             "x-stoplight": {
               "id": "f9vmf624msybd"
+            },
+            "description": "Количество миллисекунд с 2004-01-01T00:00:00.000Z"
+          },
+          "referencePositionHeading": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "8x4c6chg18vea"
+            },
+            "properties": {
+              "headingValue": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "62b4eup5tu4jg"
+                },
+                "description": "HeadingValue ::= INTEGER {wgs84North(0), wgs84East(900),\r\nwgs84South(1800), wgs84West(2700), unavailable(3601)} (0..3601"
+              },
+              "headingConfidence": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "p9aali7lhf7m6"
+                },
+                "description": "Значение должно быть установлено следующим образом:\r\n• 1, если точность курса равна или меньше 0,1 градуса,\r\n• n (n > 1 и n < 125), если точность курса равна или меньше\r\nn × 0,1 градус,\r\n• 125, если точность курса равна или меньше 12,5 градусов,\r\n• 126, если точность курса выходит за пределы допустимого диапазона, т. е. превышает 12,5 градусов,\r\n• 127, если информация о точности курса недоступна."
+              }
+            },
+            "required": [
+              "headingValue",
+              "headingConfidence"
+            ]
+          },
+          "referencePositionSpeed": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "9145cmag8q3oi"
+            },
+            "properties": {
+              "speedValue": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "bxwdd60wgar1b"
+                },
+                "description": "SpeedValue ::= INTEGER {остановка(0), oneCentimeterPerSec(1),\r\nнедоступен(16383)} (0..16383)\r\n\r\nЗначение скорости. Для значений, равных или превышающих 163,82 м/с, значение устанавливается равным 16 382. Если информация недоступна, значение устанавливается равным 16 383."
+              },
+              "speedConfidence": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "hicqgneogj75t"
+                },
+                "description": "SpeedConfidence ::= INTEGER {equalOrWithinOneCentimeterPerSec(1),\r\nравныйOrWithinOneMeterPerSec(100), outOfRange(126), недоступен(127)}\r\n(1..127)\r\n\r\nЗначение должно быть установлено следующим образом:\r\n• 1, если точность скорости равна или меньше 1 см/с.\r\n• n (n > 1 и n < 125), если точность скорости равна или меньше n см/с.\r\n• 125, если точность скорости равна или меньше 125 см/с.\r\n• 126, если точность скорости выходит за пределы допустимого диапазона, т. е. превышает 125 см/с.\r\n• 127, если информация о точности скорости недоступна."
+              }
             }
           }
         },
@@ -301,6 +390,143 @@
             }
           }
         }
+      },
+      "ivi-message-ivi-optional-glc-parts": {
+        "type": "array",
+        "x-examples": {
+          "Example 1": [
+            {
+              "zoneId": 0,
+              "laneNumber": 0,
+              "zoneExtension": 0,
+              "zoneHeading": {
+                "headingValue": 0,
+                "headingConfidence": 0
+              }
+            }
+          ]
+        },
+        "items": {
+          "type": "object",
+          "properties": {
+            "zoneId": {
+              "type": "integer",
+              "description": "Zid::= INTEGER (1..32,...)"
+            },
+            "laneNumber": {
+              "type": "integer",
+              "description": "LanePosition ::= INTEGER {offTheRoad(-1), hardShoulder(0), OutermostDrivingLane(1), SecondLaneFromOutside(2)} (-1..14)\r\n\r\nЭтот DE указывает информацию о поперечном положении на дороге в разрешении полос, отсчитываемых от внешней границы дороги для данного направления движения. Значение -1 означает, что указанная позиция находится за пределами дороги."
+            },
+            "zoneExtension": {
+              "type": "integer"
+            },
+            "zoneHeading": {
+              "type": "object",
+              "properties": {
+                "headingValue": {
+                  "type": "integer",
+                  "description": "HeadingValue ::= INTEGER {wgs84North(0), wgs84East(900), wgs84South(1800), wgs84West(2700), unavailable(3601)} (0..3601)"
+                },
+                "headingConfidence": {
+                  "type": "integer",
+                  "description": "Абсолютная точность сообщаемого значения заголовка для заранее определенного уровня достоверности (например, 95 %). Требуемый уровень доверия определяется соответствующими стандартами, применяющими DE.\r\nЗначение должно быть установлено следующим образом:\r\n• 1, если точность курса равна или меньше 0,1 градуса,\r\n• n (n > 1 и n < 125), если точность курса равна или меньше\r\nn × 0,1 градус,\r\n• 125, если точность курса равна или меньше 12,5 градусов,\r\n• 126, если точность курса выходит за пределы допустимого диапазона, т. е. превышает 12,5 градусов,\r\n• 127, если информация о точности курса недоступна."
+                }
+              },
+              "required": [
+                "headingValue",
+                "headingConfidence"
+              ]
+            }
+          },
+          "required": [
+            "zoneId"
+          ]
+        },
+        "description": "parts"
+      },
+      "ivi-message-ivi-optional-glc-referencePosition": {
+        "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "referencePosition": {
+              "latitude": 0,
+              "longitude": 0,
+              "positionConfidenceEllipse": {
+                "semiMajorConfidence": 0,
+                "semiMinorConfidence": 0,
+                "semiMajorOrientation": 0
+              },
+              "altitude": {
+                "altitudeValue": 0,
+                "altitudeConfidence": 0
+              }
+            }
+          }
+        },
+        "properties": {
+          "referencePosition": {
+            "type": "object",
+            "required": [
+              "latitude",
+              "longitude",
+              "positionConfidenceEllipse",
+              "altitude"
+            ],
+            "properties": {
+              "latitude": {
+                "type": "integer",
+                "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10), unavailable(900000001) } (-900000000..900000001)\r\n\r\nAbsolute geographical latitude in a WGS84 coordinate system, providing a range of 90 degrees in north or in south hemisphere."
+              },
+              "longitude": {
+                "type": "integer",
+                "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10), unavailable(900000001) } (-900000000..900000001)\r\n\r\nAbsolute geographical latitude in a WGS84 coordinate system, providing a range of 90 degrees in north or in south hemisphere."
+              },
+              "positionConfidenceEllipse": {
+                "type": "object",
+                "required": [
+                  "semiMajorConfidence",
+                  "semiMinorConfidence",
+                  "semiMajorOrientation"
+                ],
+                "properties": {
+                  "semiMajorConfidence": {
+                    "type": "integer",
+                    "description": "Значение должно быть установлено следующим образом:\r\n• 1, если точность равна или меньше 1 см,\r\n• n (n > 1 и n < 4093), если точность равна или меньше n см,\r\n• 4 093, если точность равна или меньше 4 093 см,\r\n• 4 094, если точность выходит за пределы допустимого диапазона, т. е. превышает 4 093 см,\r\n• 4 095, если информация о точности недоступна."
+                  },
+                  "semiMinorConfidence": {
+                    "type": "integer",
+                    "description": "Значение должно быть установлено следующим образом:\r\n• 1, если точность равна или меньше 1 см,\r\n• n (n > 1 и n < 4093), если точность равна или меньше n см,\r\n• 4 093, если точность равна или меньше 4 093 см,\r\n• 4 094, если точность выходит за пределы допустимого диапазона, т. е. превышает 4 093 см,\r\n• 4 095, если информация о точности недоступна."
+                  },
+                  "semiMajorOrientation": {
+                    "type": "integer",
+                    "description": "HeadingValue ::= INTEGER {wgs84North(0), wgs84East(900),\r\nwgs84South(1800), wgs84West(2700), unavailable(3601)} (0..3601)"
+                  }
+                }
+              },
+              "altitude": {
+                "type": "object",
+                "required": [
+                  "altitudeValue",
+                  "altitudeConfidence"
+                ],
+                "properties": {
+                  "altitudeValue": {
+                    "type": "integer",
+                    "description": "INTEGER {referenceEllipsoidSurface(0),\r\noneCentimeter(1), unavailable(800001) } (-100000..800001)"
+                  },
+                  "altitudeConfidence": {
+                    "type": "integer",
+                    "description": "Значение должно быть установлено следующим образом:\r\n• 0, если точность высоты равна или меньше 0,01 метра.\r\n• 1, если точность высоты равна или меньше 0,02 метра.\r\n• 2, если точность высоты равна или меньше 0,05 метра.\r\n• 3, если точность высоты равна или меньше 0,1 метра.\r\n• 4, если точность высоты равна или меньше 0,2 метра.\r\n• 5, если точность высоты равна или меньше 0,5 метра.\r\n• 6, если точность высоты равна или меньше 1 метра.\r\n• 7, если точность высоты равна или меньше 2 метров.\r\n• 8, если точность высоты равна или меньше 5 метров.\r\n• 9, если точность высоты равна или меньше 10 метров.\r\n• 10, если точность высоты равна или меньше 20 метров.\r\n• 11, если точность высоты равна или меньше 50 метров.\r\n• 12, если точность высоты равна или меньше 100 метров.\r\n• 13, если точность высоты равна или меньше 200 метров.\r\n• 14, если точность высоты выходит за пределы допустимого диапазона, т. е. превышает 200 метров.\r\n• 15, если информация о точности высоты недоступна."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "referencePosition"
+        ],
+        "description": "referencePosition"
       }
     }
   }
