@@ -248,180 +248,6 @@
         "required": [
           "referencePosition",
           "parts"
-        ],
-        "examples": [
-          {
-            "referencePosition": {
-              "referencePosition": {
-                "latitude": 0,
-                "longitude": 0,
-                "positionConfidenceEllipse": {
-                  "semiMajorConfidence": 0,
-                  "semiMinorConfidence": 0,
-                  "semiMajorOrientation": 0
-                },
-                "altitude": {
-                  "altitudeValue": 0,
-                  "altitudeConfidence": 0
-                }
-              }
-            },
-            "referencePositionTime": 0,
-            "referencePositionHeading": {
-              "headingValue": 0,
-              "headingConfidence": 0
-            },
-            "referencePositionSpeed": {
-              "speedValue": 0,
-              "speedConfidence": 0
-            },
-            "parts": [
-              {
-                "zoneId": 0,
-                "laneNumber": 0,
-                "zoneExtension": 0,
-                "zoneHeading": {
-                  "headingValue": 0,
-                  "headingConfidence": 0
-                },
-                "zone": {
-                  "segment": {
-                    "line": {
-                      "deltaPositions": [
-                        {
-                          "deltaLatitude": 0,
-                          "deltaLongitude": 0
-                        }
-                      ],
-                      "deltaPositionsWithAltitude": [
-                        {
-                          "deltaLatitude": 0,
-                          "deltaLongitude": 0
-                        }
-                      ],
-                      "absolutePositions": [
-                        {
-                          "latitude": 0,
-                          "longitude": 0
-                        }
-                      ],
-                      "absolutePositionsWithAltitude": [
-                        {
-                          "latitude": 0,
-                          "longitude": 0,
-                          "altitude": {
-                            "altitudeValue": 0,
-                            "altitudeConfidence": 0
-                          }
-                        }
-                      ]
-                    },
-                    "laneWidth": 0
-                  },
-                  "area": {
-                    "id": "string"
-                  },
-                  "computedSegment": {
-                    "zoneId": 0,
-                    "laneNumber": 0,
-                    "laneWidth": 0,
-                    "offsetDistance": 0,
-                    "offsetPosition": {
-                      "deltaLatitude": 0,
-                      "deltaLongitude": 0,
-                      "deltaAltitude": 0
-                    }
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "referencePosition": {
-              "referencePosition": {
-                "latitude": 0,
-                "longitude": 0,
-                "positionConfidenceEllipse": {
-                  "semiMajorConfidence": 0,
-                  "semiMinorConfidence": 0,
-                  "semiMajorOrientation": 0
-                },
-                "altitude": {
-                  "altitudeValue": 0,
-                  "altitudeConfidence": 0
-                }
-              }
-            },
-            "referencePositionTime": 0,
-            "referencePositionHeading": {
-              "headingValue": 0,
-              "headingConfidence": 0
-            },
-            "referencePositionSpeed": {
-              "speedValue": 0,
-              "speedConfidence": 0
-            },
-            "parts": [
-              {
-                "zoneId": 0,
-                "laneNumber": 0,
-                "zoneExtension": 0,
-                "zoneHeading": {
-                  "headingValue": 0,
-                  "headingConfidence": 0
-                },
-                "zone": {
-                  "segment": {
-                    "line": {
-                      "deltaPositions": [
-                        {
-                          "deltaLatitude": 0,
-                          "deltaLongitude": 0
-                        }
-                      ],
-                      "deltaPositionsWithAltitude": [
-                        {
-                          "deltaLatitude": 0,
-                          "deltaLongitude": 0
-                        }
-                      ],
-                      "absolutePositions": [
-                        {
-                          "latitude": 0,
-                          "longitude": 0
-                        }
-                      ],
-                      "absolutePositionsWithAltitude": [
-                        {
-                          "latitude": 0,
-                          "longitude": 0,
-                          "altitude": {
-                            "altitudeValue": 0,
-                            "altitudeConfidence": 0
-                          }
-                        }
-                      ]
-                    },
-                    "laneWidth": 0
-                  },
-                  "area": {
-                    "id": "string"
-                  },
-                  "computedSegment": {
-                    "zoneId": 0,
-                    "laneNumber": 0,
-                    "laneWidth": 0,
-                    "offsetDistance": 0,
-                    "offsetPosition": {
-                      "deltaLatitude": 0,
-                      "deltaLongitude": 0,
-                      "deltaAltitude": 0
-                    }
-                  }
-                }
-              }
-            ]
-          }
         ]
       },
       "ivi-message": {
@@ -430,93 +256,6 @@
           "id": "gto8d8g4agyv8"
         },
         "type": "object",
-        "properties": {
-          "header": {
-            "$ref": "#/components/schemas/ivi-message-header",
-            "x-stoplight": {
-              "id": "ufgme2fgkns79"
-            }
-          },
-          "ivi": {
-            "type": "object",
-            "x-stoplight": {
-              "id": "yq9be3po42jzq"
-            },
-            "properties": {
-              "mandatory": {
-                "$ref": "#/components/schemas/ivi-message-ivi-mandatory",
-                "x-stoplight": {
-                  "id": "e47lrxnl7pv1y"
-                }
-              },
-              "optional": {
-                "type": "object",
-                "x-stoplight": {
-                  "id": "80sjc09yqfdzg"
-                },
-                "description": "Один из блоков:\r\n\r\nglc - GeographicLocationContainer,\r\n\r\ngic - GeneralIviContainer,\r\n\r\nrcc - RoadConfigurationContainer,\r\n\r\ntc - TextContainer,\r\n\r\nlac - LayoutContainer,",
-                "properties": {
-                  "glc": {
-                    "$ref": "#/components/schemas/ivi-message-ivi-optional-glc",
-                    "x-stoplight": {
-                      "id": "pcuxo4d7hp7ua"
-                    }
-                  },
-                  "gic": {
-                    "x-stoplight": {
-                      "id": "h3n57h7b9cfjk"
-                    },
-                    "type": "array",
-                    "description": "????\r\ngiv (по документации gic, но с ним не работает)",
-                    "items": {
-                      "$ref": "#/components/schemas/ivi-message-ivi-optional-gic",
-                      "x-stoplight": {
-                        "id": "szcxr1y1pa26c"
-                      }
-                    }
-                  },
-                  "rcc": {
-                    "type": "array",
-                    "x-stoplight": {
-                      "id": "p7huqvi1bf136"
-                    },
-                    "description": "https://wiki.stdev.ru/download/attachments/473467502/image2020-9-22_11-15-39.png?version=1&modificationDate=1600847295000&api=v2",
-                    "items": {
-                      "$ref": "#/components/schemas/ivi-message-ivi-optional-rcc",
-                      "x-stoplight": {
-                        "id": "zxm9vfbnjcomm"
-                      }
-                    }
-                  },
-                  "tc": {
-                    "type": "array",
-                    "x-stoplight": {
-                      "id": "1yh8r7x9lpdyp"
-                    },
-                    "items": {
-                      "$ref": "#/components/schemas/ivi-message-ivi-optional-tc",
-                      "x-stoplight": {
-                        "id": "ck2jwlahwf11m"
-                      }
-                    }
-                  },
-                  "lac": {
-                    "type": "array",
-                    "x-stoplight": {
-                      "id": "mfnq0cs6lvxkk"
-                    },
-                    "items": {
-                      "$ref": "#/components/schemas/ivi-message-ivi-optional-lac",
-                      "x-stoplight": {
-                        "id": "mmjfyf27takz9"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
         "examples": [
           {
             "header": {
@@ -926,8 +665,285 @@
                 ]
               }
             }
+          },
+          {
+            "header": {
+              "protocolVersion": 0,
+              "messageID": 0,
+              "stationID": 0
+            },
+            "ivi": {
+              "mandatory": {
+                "serviceProviderId": {
+                  "countryCode": "string",
+                  "providerIdentifier": 0
+                },
+                "iviIdentificationNumber": 0,
+                "timestamp": 0,
+                "validFrom": 0,
+                "validTo": 0,
+                "connectedIviStructures": "string",
+                "iviStatus": 0
+              },
+              "optional": {
+                "gic": [
+                  {
+                    "detectionZoneIds": [
+                      0
+                    ],
+                    "its-Rrid": 0,
+                    "relevanceZoneIds": 0,
+                    "direction": 0,
+                    "driverAwarenessZoneIds": [
+                      0
+                    ],
+                    "minimumAwarenessTime": 0,
+                    "applicableLanes": [
+                      0
+                    ],
+                    "iviType": 0,
+                    "iviPurpose": 0,
+                    "laneStatus": 0,
+                    "CompleteVehicleCharacteristics": {},
+                    "driverCharacteristics": 0,
+                    "layoutId": 0,
+                    "preStoredlayoutId": 0,
+                    "roadSignCodes": {
+                      "layoutComponentId": 0,
+                      "code": {
+                        "iso14823": {
+                          "pictogramCode": {
+                            "countryCode": "string",
+                            "serviceCategoryCode": "string",
+                            "pictogramCategoryCode": {
+                              "nature": 0,
+                              "serialNumber": 0
+                            }
+                          },
+                          "attributes": {
+                            "dtm": {
+                              "hei": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "wid": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "vln": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "wei": {
+                                "value": 0,
+                                "unit": 0
+                              }
+                            },
+                            "edt": {
+                              "year": {
+                                "syr": 0,
+                                "eyr": 0
+                              },
+                              "month-day": {
+                                "smd": {
+                                  "month": 0,
+                                  "day": 0
+                                },
+                                "emd": {
+                                  "month": 0,
+                                  "day": 0
+                                }
+                              },
+                              "pmd": "string",
+                              "hourMinutes": {
+                                "shm": {
+                                  "hours": 0,
+                                  "mins": 0
+                                },
+                                "ehm": {
+                                  "hours": 0,
+                                  "mins": 0
+                                }
+                              },
+                              "dayOfWeek": 0,
+                              "period": {
+                                "hours": 0,
+                                "mins": 0
+                              }
+                            },
+                            "dfl": 0,
+                            "ved": {
+                              "hei": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "wid": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "vln": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "wei": {
+                                "value": 0,
+                                "unit": 0
+                              }
+                            },
+                            "spe": {
+                              "spm": 0,
+                              "mns": 0,
+                              "unit": 0
+                            },
+                            "roi": 0,
+                            "dbv": {
+                              "value": 0,
+                              "unit": 0
+                            },
+                            "ddd": {
+                              "dcj": 0,
+                              "dcr": 0,
+                              "tpl": 0,
+                              "ioList": [
+                                {
+                                  "drn": 0,
+                                  "dp": [
+                                    {
+                                      "depType": 0,
+                                      "depRSCode": "string",
+                                      "depBlob": "string",
+                                      "plnId": 0,
+                                      "plnText": "string"
+                                    }
+                                  ],
+                                  "dr": [
+                                    {
+                                      "derType": 0,
+                                      "ronId": 0,
+                                      "ronText": "string"
+                                    }
+                                  ],
+                                  "rne": 0,
+                                  "stnId": 0,
+                                  "stnText": "string",
+                                  "dcp": {
+                                    "value": 0,
+                                    "unit": 0
+                                  },
+                                  "ddp": {
+                                    "value": 0,
+                                    "unit": 0
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "extraText": [
+                      {
+                        "layoutComponentId": 0,
+                        "language": "string",
+                        "textContent": "string"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
           }
-        ]
+        ],
+        "properties": {
+          "header": {
+            "$ref": "#/components/schemas/ivi-message-header",
+            "x-stoplight": {
+              "id": "ufgme2fgkns79"
+            }
+          },
+          "ivi": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "yq9be3po42jzq"
+            },
+            "properties": {
+              "mandatory": {
+                "$ref": "#/components/schemas/ivi-message-ivi-mandatory",
+                "x-stoplight": {
+                  "id": "e47lrxnl7pv1y"
+                }
+              },
+              "optional": {
+                "type": "object",
+                "x-stoplight": {
+                  "id": "80sjc09yqfdzg"
+                },
+                "description": "Один из блоков:\r\n\r\nglc - GeographicLocationContainer,\r\n\r\ngic - GeneralIviContainer,\r\n\r\nrcc - RoadConfigurationContainer,\r\n\r\ntc - TextContainer,\r\n\r\nlac - LayoutContainer,",
+                "properties": {
+                  "glc": {
+                    "$ref": "#/components/schemas/ivi-message-ivi-optional-glc",
+                    "x-stoplight": {
+                      "id": "pcuxo4d7hp7ua"
+                    },
+                    "description": "Location Container реализован для общих данных, которые содержат информацию об общей \"Reference Position\" и повторении N частей, которые определяют зоны со ссылкой на эту \"Reference Position\". Имея только основную \"Reference Position\", зоны можно определять независимо друг от друга.\r\nПредназначен для создания (где?) локаций (зон). Для создания новой зоны используется опорная точка (Reference Position) от которой отталкивается задание зоны.\r\n\r\nЗоны могут быть подвижными (динамическими?).\r\n\r\nЗону можно описать несколькими способами (фреймами данных):\r\n\r\nс помощью DF Segment - сегмент дороги как открытая многоугольная линия;\r\nс помощью DF PolygonalLine - область в виде замкнутой многоугольной линии;\r\nс помощью DF ComputedSegment - определение сегмента дороги, вычисленное из другого уже определенного смежного сегмента дороги."
+                  },
+                  "gic": {
+                    "x-stoplight": {
+                      "id": "h3n57h7b9cfjk"
+                    },
+                    "type": "array",
+                    "description": "????\r\ngiv (по документации gic, но с ним не работает)\r\nКонтейнер приложения General IVI предназначен для хранения информации, связанной с фиксированными и динамическими дорожными знаками (например, матричными знаками и частями знаков с переменными сообщениями) для поддержки таких вариантов использования, как бортовые указатели, контекстные скорости и предупреждение о дорожных работах.",
+                    "items": {
+                      "$ref": "#/components/schemas/ivi-message-ivi-optional-gic",
+                      "x-stoplight": {
+                        "id": "szcxr1y1pa26c"
+                      }
+                    }
+                  },
+                  "rcc": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "p7huqvi1bf136"
+                    },
+                    "description": "https://wiki.stdev.ru/download/attachments/473467502/image2020-9-22_11-15-39.png?version=1&modificationDate=1600847295000&api=v2\r\nRoad Configuration Container (Контейнер конфигурации дороги) предназначен для передачи информации о фактической или планируемой конфигурации участка дороги в одной или нескольких зонах. Эта информация может быть использована принимающей ITS-S для поддержки:\r\n\r\nдорожные указатели, \r\nконтекстные скорости \r\nпредупреждение о дорожных работах, \r\nи / или целей локализации (???!!!!)",
+                    "items": {
+                      "$ref": "#/components/schemas/ivi-message-ivi-optional-rcc",
+                      "x-stoplight": {
+                        "id": "zxm9vfbnjcomm"
+                      }
+                    }
+                  },
+                  "tc": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "1yh8r7x9lpdyp"
+                    },
+                    "description": "Цель текстового контейнера - предоставить возможность представления дополнительной информации для использования в случае использования указателей в автомобиле или информации, не связанной с IVS. Эта информация представлена в виде текста или файла изображения.\r\n\r\nВ этом контейнере должна передаваться текстовая информация для отображения на аппаратуре ТС.",
+                    "items": {
+                      "$ref": "#/components/schemas/ivi-message-ivi-optional-tc",
+                      "x-stoplight": {
+                        "id": "ck2jwlahwf11m"
+                      }
+                    }
+                  },
+                  "lac": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "mfnq0cs6lvxkk"
+                    },
+                    "description": "Контейнер макета предназначен для передачи информации о предлагаемом макете информации, предоставляемой общим контейнером (-ами) IVI и / или текстовым контейнером (-ами), отображаемым для водителя. Это может быть использовано, например, для представления информации в транспортном средстве с аналогичной компоновкой, как показано на дороге, т. е. отражая реальную схему VMS на дороге или другими более подходящими способами.",
+                    "items": {
+                      "$ref": "#/components/schemas/ivi-message-ivi-optional-lac",
+                      "x-stoplight": {
+                        "id": "mmjfyf27takz9"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "ivi-message-ivi-optional-glc-parts": {
         "type": "array",
