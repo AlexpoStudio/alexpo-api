@@ -1592,6 +1592,124 @@
         "x-stoplight": {
           "id": "bvy7gkj4zpk1t"
         }
+      },
+      "get - copy": {
+        "summary": "/v2x/pole/data",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "x-examples": {
+                    "Example 1": [
+                      {
+                        "feature_id": "string",
+                        "mode": "string",
+                        "type": "string",
+                        "height": 0,
+                        "status": 0,
+                        "basePos": {
+                          "x": 0,
+                          "y": 0
+                        },
+                        "version": 0,
+                        "textAngle": 0,
+                        "textRotation": 0,
+                        "streetLightMountType": "string"
+                      }
+                    ]
+                  },
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "feature_id": {
+                        "type": "string"
+                      },
+                      "mode": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "height": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "integer"
+                      },
+                      "basePos": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "integer"
+                          },
+                          "y": {
+                            "type": "integer"
+                          }
+                        }
+                      },
+                      "version": {
+                        "type": "integer"
+                      },
+                      "textAngle": {
+                        "type": "integer"
+                      },
+                      "textRotation": {
+                        "type": "integer"
+                      },
+                      "streetLightMountType": {
+                        "type": "string"
+                      },
+                      "geom_wgs84": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        }
+                      },
+                      "s_p": {
+                        "type": "string"
+                      },
+                      "e_p": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": [
+                      {
+                        "feature_id": "string",
+                        "mode": "string",
+                        "type": "string",
+                        "height": 0,
+                        "status": 0,
+                        "basePos": {
+                          "x": 0,
+                          "y": 0
+                        },
+                        "version": 0,
+                        "textAngle": 0,
+                        "textRotation": 0,
+                        "streetLightMountType": "string",
+                        "geom_wgs84": [
+                          0,
+                          0
+                        ],
+                        "s_p": "string",
+                        "e_p": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-v2x-pole-data"
       }
     }
   },
@@ -1724,6 +1842,27 @@
             "x-stoplight": {
               "id": "9md1ndzfddqfi"
             }
+          }
+        },
+        "examples": [
+          {
+            "code": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "dicti_code_name - copy": {
+        "title": "dicti_code_name",
+        "x-stoplight": {
+          "id": "cswa6uenankfi"
+        },
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
           }
         },
         "examples": [

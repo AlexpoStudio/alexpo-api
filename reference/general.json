@@ -1,0 +1,19 @@
+{
+  "openapi": "3.1.0",
+  "x-stoplight": {
+    "id": "h1t53o7oyewhb"
+  },
+  "info": {
+    "title": "general",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {}
+  }
+}
