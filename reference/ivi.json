@@ -1612,7 +1612,11 @@
               ]
             }
           }
-        }
+        },
+        "required": [
+          "iviType",
+          "roadSignCodes"
+        ]
       },
       "ivi-message-ivi-optional-gic-roadSignCodes": {
         "title": "ivi-message-ivi-optional-gic-roadSignCodes",
