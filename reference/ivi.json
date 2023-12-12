@@ -215,91 +215,9 @@
         ],
         "properties": {
           "referencePosition": {
-            "type": "object",
+            "$ref": "#/components/schemas/ivi-message-ivi-optional-glc-referencePosition",
             "x-stoplight": {
-              "id": "l7khstasdw57y"
-            },
-            "required": [
-              "latitude",
-              "longitude",
-              "positionConfidenceEllipse",
-              "altitude"
-            ],
-            "properties": {
-              "latitude": {
-                "type": "integer",
-                "x-stoplight": {
-                  "id": "fcofl31tfjagr"
-                },
-                "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10), unavailable(900000001) } (-900000000..900000001)\r\n\r\nAbsolute geographical latitude in a WGS84 coordinate system, providing a range of 90 degrees in north or in south hemisphere."
-              },
-              "longitude": {
-                "type": "integer",
-                "x-stoplight": {
-                  "id": "qukdlj6ahdzbn"
-                },
-                "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10), unavailable(900000001) } (-900000000..900000001)\r\n\r\nAbsolute geographical latitude in a WGS84 coordinate system, providing a range of 90 degrees in north or in south hemisphere."
-              },
-              "positionConfidenceEllipse": {
-                "type": "object",
-                "x-stoplight": {
-                  "id": "pg73nsimteqc2"
-                },
-                "required": [
-                  "semiMajorConfidence",
-                  "semiMinorConfidence",
-                  "semiMajorOrientation"
-                ],
-                "properties": {
-                  "semiMajorConfidence": {
-                    "type": "integer",
-                    "x-stoplight": {
-                      "id": "mhpkx3ectoqvi"
-                    },
-                    "description": "Значение должно быть установлено следующим образом:\r\n• 1, если точность равна или меньше 1 см,\r\n• n (n > 1 и n < 4093), если точность равна или меньше n см,\r\n• 4 093, если точность равна или меньше 4 093 см,\r\n• 4 094, если точность выходит за пределы допустимого диапазона, т. е. превышает 4 093 см,\r\n• 4 095, если информация о точности недоступна."
-                  },
-                  "semiMinorConfidence": {
-                    "type": "integer",
-                    "x-stoplight": {
-                      "id": "oehb8pnn8osdb"
-                    },
-                    "description": "Значение должно быть установлено следующим образом:\r\n• 1, если точность равна или меньше 1 см,\r\n• n (n > 1 и n < 4093), если точность равна или меньше n см,\r\n• 4 093, если точность равна или меньше 4 093 см,\r\n• 4 094, если точность выходит за пределы допустимого диапазона, т. е. превышает 4 093 см,\r\n• 4 095, если информация о точности недоступна."
-                  },
-                  "semiMajorOrientation": {
-                    "type": "integer",
-                    "x-stoplight": {
-                      "id": "scmua1ae1w0uw"
-                    },
-                    "description": "HeadingValue ::= INTEGER {wgs84North(0), wgs84East(900),\r\nwgs84South(1800), wgs84West(2700), unavailable(3601)} (0..3601)"
-                  }
-                }
-              },
-              "altitude": {
-                "type": "object",
-                "x-stoplight": {
-                  "id": "lp268c4mjduff"
-                },
-                "required": [
-                  "altitudeValue",
-                  "altitudeConfidence"
-                ],
-                "properties": {
-                  "altitudeValue": {
-                    "type": "integer",
-                    "x-stoplight": {
-                      "id": "kamjbimlmr9eu"
-                    },
-                    "description": "INTEGER {referenceEllipsoidSurface(0),\r\noneCentimeter(1), unavailable(800001) } (-100000..800001)"
-                  },
-                  "altitudeConfidence": {
-                    "type": "integer",
-                    "x-stoplight": {
-                      "id": "48oe9r5n35n1o"
-                    },
-                    "description": "Значение должно быть установлено следующим образом:\r\n• 0, если точность высоты равна или меньше 0,01 метра.\r\n• 1, если точность высоты равна или меньше 0,02 метра.\r\n• 2, если точность высоты равна или меньше 0,05 метра.\r\n• 3, если точность высоты равна или меньше 0,1 метра.\r\n• 4, если точность высоты равна или меньше 0,2 метра.\r\n• 5, если точность высоты равна или меньше 0,5 метра.\r\n• 6, если точность высоты равна или меньше 1 метра.\r\n• 7, если точность высоты равна или меньше 2 метров.\r\n• 8, если точность высоты равна или меньше 5 метров.\r\n• 9, если точность высоты равна или меньше 10 метров.\r\n• 10, если точность высоты равна или меньше 20 метров.\r\n• 11, если точность высоты равна или меньше 50 метров.\r\n• 12, если точность высоты равна или меньше 100 метров.\r\n• 13, если точность высоты равна или меньше 200 метров.\r\n• 14, если точность высоты выходит за пределы допустимого диапазона, т. е. превышает 200 метров.\r\n• 15, если информация о точности высоты недоступна."
-                  }
-                }
-              }
+              "id": "5t6p7c771xkvr"
             }
           },
           "referencePositionTime": {
@@ -356,10 +274,17 @@
                 "description": "SpeedConfidence ::= INTEGER {equalOrWithinOneCentimeterPerSec(1),\r\nравныйOrWithinOneMeterPerSec(100), outOfRange(126), недоступен(127)}\r\n(1..127)\r\n\r\nЗначение должно быть установлено следующим образом:\r\n• 1, если точность скорости равна или меньше 1 см/с.\r\n• n (n > 1 и n < 125), если точность скорости равна или меньше n см/с.\r\n• 125, если точность скорости равна или меньше 125 см/с.\r\n• 126, если точность скорости выходит за пределы допустимого диапазона, т. е. превышает 125 см/с.\r\n• 127, если информация о точности скорости недоступна."
               }
             }
+          },
+          "parts": {
+            "$ref": "#/components/schemas/ivi-message-ivi-optional-glc-parts",
+            "x-stoplight": {
+              "id": "xjxl6z140nyo6"
+            }
           }
         },
         "required": [
-          "referencePosition"
+          "referencePosition",
+          "parts"
         ]
       },
       "ivi-message": {
@@ -406,6 +331,7 @@
             }
           ]
         },
+        "description": "parts",
         "items": {
           "type": "object",
           "properties": {
@@ -436,13 +362,19 @@
                 "headingValue",
                 "headingConfidence"
               ]
+            },
+            "zone": {
+              "type": "object",
+              "x-stoplight": {
+                "id": "9a83fb6fwzx3f"
+              },
+              "description": "Один вариант из:\r\n\r\nsegment Segment,\r\n\r\narea PolygonalLine,\r\n\r\ncomputedSegment ComputedSegment"
             }
           },
           "required": [
             "zoneId"
           ]
-        },
-        "description": "parts"
+        }
       },
       "ivi-message-ivi-optional-glc-referencePosition": {
         "type": "object",
@@ -527,6 +459,113 @@
           "referencePosition"
         ],
         "description": "referencePosition"
+      },
+      "ivi-message-ivi-optional-glc-parts-segment": {
+        "title": "ivi-message-ivi-optional-glc-parts-segment",
+        "x-stoplight": {
+          "id": "dbgszf3aszt70"
+        },
+        "type": "object",
+        "properties": {
+          "line": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "f8gpgpy8fmtd5"
+            },
+            "description": "Один из вариантов\r\n\r\nКадр данных PolygonalLine должен содержать определение ломаной линии как одной из следующих альтернатив:\r\n- последовательность дельта-точек относительно предыдущей позиции с широтой и долготой, закодированной элементом данных DeltaPosition, причем первая позиция является эталонной позицией в контейнере местоположения;\r\n- последовательность точек дельты относительно предыдущего положения с широтой, долготой и высотой, как закодировано элементом данных DeltaReferencePosition и как определено в ETSI/TS 102 894-2,\r\nпервая позиция является эталонной позицией в контейнере местоположений;\r\n— последовательность абсолютных положений с широтой и долготой, закодированная элементом данных AbsolutePosition; в этом случае опорное положение в контейнере местоположений служит первой точкой ломаной линии;\r\n— последовательность абсолютных положений с широтой, долготой и высотой, закодированная элементом данных AbsolutePositionWAltitude. В этом случае опорная позиция в контейнере местоположений служит первой точкой ломаной линии.",
+            "properties": {
+              "deltaPositions": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "oh41pbbw7y8sy"
+                },
+                "items": {
+                  "x-stoplight": {
+                    "id": "mg7t7jukir0pn"
+                  },
+                  "type": "object",
+                  "properties": {
+                    "deltaLatitude": {
+                      "type": "integer",
+                      "x-stoplight": {
+                        "id": "a1zje0hm6nc6y"
+                      },
+                      "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10) , unavailable(131072)} (-131071..131072)"
+                    },
+                    "deltaLongitude": {
+                      "type": "integer",
+                      "x-stoplight": {
+                        "id": "rnb95rx4wfwe1"
+                      },
+                      "description": "INTEGER {oneMicrodegreeEast (10), oneMicrodegreeWest (-10), unavailable(131072)} (-131071..131072)"
+                    }
+                  },
+                  "required": [
+                    "deltaLatitude",
+                    "deltaLongitude"
+                  ]
+                }
+              },
+              "deltaPositionsWithAltitude": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "1od1qdt5dwgi3"
+                },
+                "items": {
+                  "x-stoplight": {
+                    "id": "lo513sjz6wdta"
+                  },
+                  "type": "object",
+                  "properties": {
+                    "deltaLatitude": {
+                      "type": "integer",
+                      "x-stoplight": {
+                        "id": "ej7lt0tkath3f"
+                      },
+                      "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10) , unavailable(131072)} (-131071..131072)"
+                    },
+                    "deltaLongitude": {
+                      "type": "integer",
+                      "x-stoplight": {
+                        "id": "9xah2tnf6geql"
+                      },
+                      "description": "INTEGER {oneCentimeterUp (1), oneCentimeterDown (-1), unavailable(12800)} (-12700..12800)"
+                    }
+                  },
+                  "required": [
+                    "deltaLatitude",
+                    "deltaLongitude",
+                    "deltaLongitude"
+                  ]
+                }
+              },
+              "absolutePositions": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "sjv45fsuxo16b"
+                },
+                "items": {
+                  "x-stoplight": {
+                    "id": "bgwy5962tosl3"
+                  },
+                  "type": "object",
+                  "properties": {
+                    "latitude": {
+                      "type": "string",
+                      "x-stoplight": {
+                        "id": "mdje0c2tkqrp2"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "line"
+        ],
+        "description": "segment"
       }
     }
   }
