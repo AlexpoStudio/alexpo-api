@@ -894,6 +894,609 @@
           }
         },
         "description": "gic"
+      },
+      "ivi-message-ivi-optional-gic-roadSignCodes": {
+        "title": "ivi-message-ivi-optional-gic-",
+        "x-stoplight": {
+          "id": "jiqmbakfsuhfv"
+        },
+        "type": "object",
+        "properties": {
+          "layoutComponentId": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "x1agdo5ilytl9"
+            },
+            "description": "INTEGER(1..4,...)"
+          },
+          "code": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "gd7lvqwykw2v5"
+            },
+            "description": "Один из:\r\n\r\nviennaConvetionVcCode, -- see Vienna Convention Annex A\r\n\r\niso14823 ISO14823Code,\r\n\r\nitisCodes INTEGER (0..65535), -- see SAE J2540\r\n\r\nanyCatalogue AnyCatalogue,"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "description": "roadSignCodes"
+      },
+      "ivi-message-ivi-optional-gic-roadSignCodes-iso14823": {
+        "title": "ivi-message-ivi-optional-gic-roadSignCodes-",
+        "x-stoplight": {
+          "id": "1z8yul0ut2e2y"
+        },
+        "type": "object",
+        "properties": {
+          "pictogramCode": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "vy4er7i50b54x"
+            },
+            "properties": {
+              "countryCode": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "hpeeiw5m8alb1"
+                },
+                "description": "OCTET STRING (SIZE (2))"
+              },
+              "serviceCategoryCode": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "kf1xdzdx79ymy"
+                },
+                "description": "Один из:\r\n\r\ntrafficSignPictogram ENUMERATED {dangerWarning, regulatory, informative,...},\r\n\r\npublicFacilitiesPictogram ENUMERATED {publicFacilities, ...},\r\n\r\nambientOrRoadConditionPictogram ENUMERATED {ambientCondition, roadCondition,...},"
+              },
+              "pictogramCategoryCode": {
+                "type": "object",
+                "x-stoplight": {
+                  "id": "ktsak988ygzv5"
+                },
+                "properties": {
+                  "nature": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "ty8y9j9busgt3"
+                    },
+                    "description": "INTEGER (1..9)"
+                  },
+                  "serialNumber": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "hizx9jc3o8sql"
+                    },
+                    "description": "INTEGER (0..99)"
+                  }
+                },
+                "required": [
+                  "nature",
+                  "serialNumber"
+                ]
+              }
+            }
+          },
+          "attributes": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "q8rr0wpind20b"
+            },
+            "description": "ISO14823Attributes",
+            "properties": {
+              "dtm": {
+                "type": "object",
+                "x-stoplight": {
+                  "id": "e7m8djr4ln9ir"
+                },
+                "description": "Date/Time/Period",
+                "properties": {
+                  "hei": {
+                    "$ref": "#/components/schemas/dicti-value-unit",
+                    "x-stoplight": {
+                      "id": "g4sicaxjgecij"
+                    },
+                    "description": "Расстояние"
+                  },
+                  "wid": {
+                    "$ref": "#/components/schemas/dicti-value-unit",
+                    "x-stoplight": {
+                      "id": "0l09rn8s72muy"
+                    },
+                    "description": "Расстояние"
+                  },
+                  "vln": {
+                    "$ref": "#/components/schemas/dicti-value-unit",
+                    "x-stoplight": {
+                      "id": "ohktmxdb2zy1b"
+                    },
+                    "description": "Расстояние"
+                  },
+                  "wei": {
+                    "$ref": "#/components/schemas/dicti-value-unit",
+                    "x-stoplight": {
+                      "id": "q2d9ibdr0720b"
+                    }
+                  }
+                }
+              },
+              "edt": {
+                "type": "object",
+                "x-stoplight": {
+                  "id": "5g55xbt9umtaj"
+                },
+                "description": "Exemption status of Date/Time/Period",
+                "properties": {
+                  "year": {
+                    "type": "object",
+                    "x-stoplight": {
+                      "id": "itdf0spbp27ki"
+                    },
+                    "properties": {
+                      "syr": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "3znsfdijamskt"
+                        },
+                        "description": "INTEGER(2000..2127,...)"
+                      },
+                      "eyr": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "93pw0s3j78uc5"
+                        },
+                        "description": "INTEGER(2000..2127,...)"
+                      }
+                    },
+                    "required": [
+                      "syr",
+                      "eyr"
+                    ]
+                  },
+                  "month-day": {
+                    "type": "object",
+                    "x-stoplight": {
+                      "id": "y5vmg2bdous8j"
+                    },
+                    "properties": {
+                      "smd": {
+                        "$ref": "#/components/schemas/dicti-month-day",
+                        "x-stoplight": {
+                          "id": "92s5tva264yse"
+                        }
+                      },
+                      "emd": {
+                        "$ref": "#/components/schemas/dicti-month-day",
+                        "x-stoplight": {
+                          "id": "vjkirj1s69wb2"
+                        }
+                      }
+                    },
+                    "required": [
+                      "smd",
+                      "emd"
+                    ]
+                  },
+                  "pmd": {
+                    "type": "string",
+                    "x-stoplight": {
+                      "id": "vbv5rqgyj7pyo"
+                    },
+                    "description": "PMD::= BIT STRING {national-holiday (0), even-days(1), odd-days(2), market-day(3) } (SIZE (4))"
+                  },
+                  "hourMinutes": {
+                    "type": "object",
+                    "x-stoplight": {
+                      "id": "mxyrartoo2fm4"
+                    },
+                    "properties": {
+                      "shm": {
+                        "$ref": "#/components/schemas/dicti-hours-mins",
+                        "x-stoplight": {
+                          "id": "p2cc6tpjd39la"
+                        }
+                      },
+                      "ehm": {
+                        "$ref": "#/components/schemas/dicti-hours-mins",
+                        "x-stoplight": {
+                          "id": "9q2qbbgf3ob22"
+                        }
+                      }
+                    },
+                    "required": [
+                      "shm",
+                      "ehm"
+                    ]
+                  },
+                  "dayOfWeek": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "ahfnrri7z9ydi"
+                    },
+                    "description": "DayOfWeek ::= BIT STRING {unused(0), monday(1), tuesday(2), wednesday(3), thursday(4), friday(5), saturday(6), sunday(7)} (SIZE (8))"
+                  },
+                  "period": {
+                    "$ref": "#/components/schemas/dicti-hours-mins",
+                    "x-stoplight": {
+                      "id": "flz4ugmdue0pu"
+                    }
+                  }
+                }
+              },
+              "dfl": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "sw9vog7ubvovl"
+                },
+                "description": "DFL, -- Направленный поток полосы движения\r\n\r\nDFL::= ЦЕЛОЕ {\r\n\r\nsDL (1) , -- Только прямое направление\r\n\r\nsLT (2) , -- Только прямой и левый поворот\r\n\r\nsRT (3) , -- Только прямой и правый поворот\r\n\r\nlTO (4) , -- Только поворот налево\r\n\r\nrTO (5) , -- Только правый поворот\r\n\r\ncLL (6) , -- Схождение с левой полосы\r\n\r\ncRI(7) , -- Схождение с правой полосы\r\n\r\noVL (8) -- Полоса встречного транспорта\r\n\r\n} (1..8)"
+              },
+              "ved": {
+                "type": "object",
+                "x-stoplight": {
+                  "id": "k0i8di5d1r4t1"
+                },
+                "description": "VED - Габаритные размеры автомобиля",
+                "properties": {
+                  "hei": {
+                    "$ref": "#/components/schemas/dicti-value-unit",
+                    "x-stoplight": {
+                      "id": "gfv4diwa9gra0"
+                    },
+                    "description": "Distance (Высота?)"
+                  },
+                  "wid": {
+                    "$ref": "#/components/schemas/dicti-value-unit",
+                    "x-stoplight": {
+                      "id": "0w46x15ev43tf"
+                    },
+                    "description": "Distance (Ширина?)"
+                  },
+                  "vln": {
+                    "$ref": "#/components/schemas/dicti-value-unit",
+                    "x-stoplight": {
+                      "id": "6fnoz5b410o0x"
+                    },
+                    "description": "Distance"
+                  },
+                  "wei": {
+                    "$ref": "#/components/schemas/dicti-value-unit",
+                    "x-stoplight": {
+                      "id": "qf6bdxo7sqh3c"
+                    },
+                    "description": "Weight (Вес)\r\n\r\nЭлемент данных Weight содержит значение веса вместе с единицей измерения."
+                  }
+                }
+              },
+              "spe": {
+                "type": "object",
+                "x-stoplight": {
+                  "id": "bbie67gs10qln"
+                },
+                "description": "SPE, -- Speed",
+                "required": [
+                  "unit"
+                ],
+                "properties": {
+                  "spm": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "8hq7pk7xhl95k"
+                    },
+                    "description": "INTEGER(0..250)"
+                  },
+                  "mns": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "zsa3tkbgluxjk"
+                    },
+                    "description": "INTEGER(0..250)"
+                  },
+                  "unit": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "dz1tvwmzmrunz"
+                    },
+                    "description": "RSCUnit(0..1)\r\n\r\nRSCUnit::= ЦЕЛОЕ ЧИСЛО {\r\n\r\nкм/ч (0),\r\n\r\nмильпер (1),\r\n\r\nкилометр (2),\r\n\r\nметр (3),\r\n\r\nдециметр (4),\r\n\r\nсантиметр (5),\r\n\r\nмиля (6),\r\n\r\nдвор (7),\r\n\r\nстопа (8),\r\n\r\nминуты времени (9),\r\n\r\nтонн (10), --1000 кг, а не Тонна!\r\n\r\nстокг (11),\r\n\r\nфунт (12), --фунты\r\n\r\nскорость наклона (13)\r\n\r\n-- другое значение, зарезервированное для будущего использования\r\n\r\n} (0..15)"
+                  }
+                }
+              },
+              "roi": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "kbtc01l6gmh5u"
+                },
+                "description": "ROI, -- Скорость наклона\r\n\r\nROI::= INTEGER(1..32)"
+              },
+              "dbv": {
+                "$ref": "#/components/schemas/dicti-value-unit",
+                "x-stoplight": {
+                  "id": "xgwjvwk2a896b"
+                },
+                "description": "Расстояние между транспортными средствами"
+              },
+              "ddd": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "r481w7ndhh3tt"
+                },
+                "description": "DDD – пункт назначения/направление/расстояние\r\n\r\nКадр данных DDD должен содержать информацию, соответствующую коду DDD в ISO/TS 14823, где\r\n- должен присутствовать один из компонентов dcj, dcr или tpl, соответствующий квалификаторам DCJ, DCR, TPL для конфигурации точки расхождения в ISO/TS 14823, и\r\n— компонент ioList должен содержать список информационных объектов DDD типа DDD_IO (этот список может содержать один или несколько информационных объектов, связанных с одним и тем же направлением и/или с разными направлениями в порядке, заданном конфигурацией).\r\n\r\nДанные кадра DDD должны хранить информацию, соответствующую коду DDD в ISO/TS 14823, где\r\n- должен использоваться один из компонентов dcj, dcr или tpl, соответствующих квалификаторам DCJ, DCR, TPL для определения точек разветвления в ISO/TS 14823, и\r\n- компонент ioList должен хранить список информационных объектов DDD типа DDD_IO (этот список может хранить один или несколько информационных объектов, связанных с одним и тем же направлением и/или с разными направлениями в порядке заданной конфигурации)."
+              }
+            },
+            "required": [
+              "edt",
+              "dfl",
+              "ved",
+              "spe",
+              "roi",
+              "dbv",
+              "ddd"
+            ]
+          }
+        }
+      },
+      "dicti-value-unit": {
+        "title": "dicti-value-unit",
+        "x-stoplight": {
+          "id": "avyro7cgi61dy"
+        },
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "018l8hg33zs4s"
+            },
+            "description": "INTEGER(1..16384)"
+          },
+          "unit": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "jwns0x1dyyhqx"
+            },
+            "description": "RSCUnit (10..12)\r\n\r\nRSCUnit::= INTEGER {\r\n\r\nkmperh (0),\r\n\r\nmilesperh (1),\r\n\r\nkilometre (2),\r\n\r\nmeter (3),\r\n\r\ndecimetre (4),\r\n\r\ncentimetre (5),\r\n\r\nmile (6),\r\n\r\nyard (7),\r\n\r\nfoot (8),\r\n\r\nminutesOfTime (9),\r\n\r\ntonnes (10), --1000 kg, not Ton!\r\n\r\nhundredkg (11),\r\n\r\npound (12), --lbs\r\n\r\nrateOfIncline (13)\r\n\r\n-- other value reserved for future use\r\n\r\n} (0..15)"
+          }
+        },
+        "required": [
+          "value",
+          "unit"
+        ],
+        "description": "value-unit"
+      },
+      "dicti-month-day": {
+        "title": "dicti-month-day",
+        "x-stoplight": {
+          "id": "u9n73dv3c71a4"
+        },
+        "type": "object",
+        "properties": {
+          "month": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "kgmgonq8qsmlf"
+            },
+            "description": "INTEGER (1..12)"
+          },
+          "day": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "in50ryl9r3p1i"
+            },
+            "description": "INTEGER (1..31)"
+          }
+        },
+        "required": [
+          "month",
+          "day"
+        ]
+      },
+      "dicti-hours-mins": {
+        "title": "dicti-hours-mins",
+        "x-stoplight": {
+          "id": "3094bzzwdrrxr"
+        },
+        "type": "object",
+        "properties": {
+          "hours": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "o369jlwwaih4i"
+            },
+            "description": "INTEGER (0..23), -- number of hours after midnight"
+          },
+          "mins": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "fgm09l3h6c1ot"
+            },
+            "description": "INTEGER (0..59) -- number of minutes after the hour"
+          }
+        },
+        "required": [
+          "hours",
+          "mins"
+        ],
+        "description": "hours-mins"
+      },
+      "ivi-message-ivi-optional-gic-roadSignCodes-iso14823-attributes-ddd": {
+        "title": "ivi-message-ivi-optional-gic-roadSignCodes-iso14823-attributes-ddd",
+        "x-stoplight": {
+          "id": "o6vozn4oktnfw"
+        },
+        "type": "object",
+        "description": "ddd – пункт назначения/направление/расстояние\n\nКадр данных DDD должен содержать информацию, соответствующую коду DDD в ISO/TS 14823, где\n- должен присутствовать один из компонентов dcj, dcr или tpl, соответствующий квалификаторам DCJ, DCR, TPL для конфигурации точки расхождения в ISO/TS 14823, и\n— компонент ioList должен содержать список информационных объектов DDD типа DDD_IO (этот список может содержать один или несколько информационных объектов, связанных с одним и тем же направлением и/или с разными направлениями в порядке, заданном конфигурацией).\n\nДанные кадра DDD должны хранить информацию, соответствующую коду DDD в ISO/TS 14823, где\n- должен использоваться один из компонентов dcj, dcr или tpl, соответствующих квалификаторам DCJ, DCR, TPL для определения точек разветвления в ISO/TS 14823, и\n- компонент ioList должен хранить список информационных объектов DDD типа DDD_IO (этот список может хранить один или несколько информационных объектов, связанных с одним и тем же направлением и/или с разными направлениями в порядке заданной конфигурации).",
+        "properties": {
+          "dcj": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "b7ixjkihuw8q9"
+            },
+            "description": "ioList"
+          },
+          "dcr": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "shjs8ojth2tfs"
+            },
+            "description": "ioList"
+          },
+          "tpl": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "z57nweb7g8b2h"
+            },
+            "description": "ioList"
+          },
+          "ioList": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "rk0uu9j8pge0m"
+            },
+            "items": {
+              "x-stoplight": {
+                "id": "p7fpfka36ldlk"
+              },
+              "type": "object",
+              "properties": {
+                "drn": {
+                  "type": "integer",
+                  "x-stoplight": {
+                    "id": "2w542b21pv3su"
+                  },
+                  "description": "INTEGER(0..7)"
+                },
+                "dp": {
+                  "type": "array",
+                  "x-stoplight": {
+                    "id": "6ltx76k7a313q"
+                  },
+                  "items": {
+                    "x-stoplight": {
+                      "id": "d75fw6qn0jgka"
+                    },
+                    "type": "object",
+                    "properties": {
+                      "depType": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "07p79n6akvne2"
+                        },
+                        "description": "DDD_DEP\r\n\r\nDDD_DEP::= INTEGER {\r\n\r\nnone (0),\r\n\r\nimportantArea (1),\r\n\r\nprincipalArea (2),\r\n\r\ngeneralArea (3),\r\n\r\nwellKnownPoint (4),\r\n\r\ncountry (5),\r\n\r\ncity (6),\r\n\r\nstreet (7),\r\n\r\nindustrialArea (8),\r\n\r\nhistoricArea (9),\r\n\r\ntouristicArea (10),\r\n\r\nculturalArea (11),\r\n\r\ntouristicRoute (12),\r\n\r\nrecommendedRoute (13),\r\n\r\ntouristicAttraction (14),\r\n\r\ngeographicArea (15) } (0..15, ...)"
+                      },
+                      "depRSCode": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "urlz47032esiv"
+                        },
+                        "description": "SO14823Code (WITH COMPONENTS {..., attributes ABSENT})\r\n\r\n\r\n\r\nISO14823Code ::= SEQUENCE{\r\npictogramCode SEQUENCE {\r\ncountryCode OCTET STRING (SIZE (2)) OPTIONAL,\r\nserviceCategoryCode CHOICE {\r\ntrafficSignPictogram ENUMERATED {dangerWarning, regulatory, informative,...},\r\npublicFacilitiesPictogram ENUMERATED {publicFacilities, ...},\r\nambientOrRoadConditionPictogram ENUMERATED {ambientCondition, roadCondition,...},\r\n...},\r\npictogramCategoryCode SEQUENCE {\r\nnature INTEGER (1..9),\r\nserialNumber INTEGER (0..99)\r\n}},\r\nattributes ISO14823Attributes OPTIONAL\r\n}"
+                      },
+                      "depBlob": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "hwy0gqp9nj43l"
+                        },
+                        "description": "OCTET STRING"
+                      },
+                      "plnId": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "b85o4hkbp7pe8"
+                        },
+                        "description": "INTEGER(1..999)"
+                      },
+                      "plnText": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "es4ck52tdc3h0"
+                        },
+                        "description": "UTF8String"
+                      }
+                    },
+                    "required": [
+                      "depType"
+                    ]
+                  }
+                },
+                "dr": {
+                  "type": "array",
+                  "x-stoplight": {
+                    "id": "i3cohtxswfdw1"
+                  },
+                  "items": {
+                    "x-stoplight": {
+                      "id": "eakgsjz1uj1ng"
+                    },
+                    "type": "object",
+                    "properties": {
+                      "derType": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "cr7lf2e3x37hs"
+                        },
+                        "description": "DDD_DER::= INTEGER {\r\n\r\nnone (0),\r\n\r\nnationalHighway (1),\r\n\r\nlocalHighway (2),\r\n\r\ntollExpresswayMotorway (3),\r\n\r\ninternationalHighway (4),\r\n\r\nhighway (5),\r\n\r\nexpressway (6),\r\n\r\nnationalRoad (7),\r\n\r\nregionalProvincialRoad (8),\r\n\r\nlocalRoad (9),\r\n\r\nmotorwayJunction (10),\r\n\r\ndiversion (11),\r\n\r\nrfu1 (12),\r\n\r\nrfu2 (13),\r\n\r\nrfu3 (14),\r\n\r\nrfu4 (15) } (0..15, ...)"
+                      },
+                      "ronId": {
+                        "type": "integer",
+                        "x-stoplight": {
+                          "id": "xbj4ictjwdx0b"
+                        },
+                        "description": "INTEGER(1..999)"
+                      },
+                      "ronText": {
+                        "type": "string",
+                        "x-stoplight": {
+                          "id": "bavqnbl663c0n"
+                        },
+                        "description": "UTF8String"
+                      }
+                    },
+                    "required": [
+                      "derType"
+                    ]
+                  }
+                },
+                "rne": {
+                  "type": "integer",
+                  "x-stoplight": {
+                    "id": "u37i1bwwhyrff"
+                  },
+                  "description": "INTEGER(1..999)"
+                },
+                "stnId": {
+                  "type": "integer",
+                  "x-stoplight": {
+                    "id": "8hktelbdzht74"
+                  },
+                  "description": "INTEGER(1..999)"
+                },
+                "stnText": {
+                  "type": "string",
+                  "x-stoplight": {
+                    "id": "bk7ti5dzmwvxw"
+                  },
+                  "description": "UTF8String"
+                },
+                "dcp": {
+                  "$ref": "#/components/schemas/dicti-value-unit",
+                  "x-stoplight": {
+                    "id": "admvp7sw8oyyl"
+                  }
+                },
+                "ddp": {
+                  "$ref": "#/components/schemas/dicti-value-unit",
+                  "x-stoplight": {
+                    "id": "nghfnnpd6yjk8"
+                  }
+                }
+              },
+              "required": [
+                "drn"
+              ]
+            }
+          }
+        },
+        "required": [
+          "ioList"
+        ]
       }
     }
   }
