@@ -466,6 +466,7 @@
           "id": "dbgszf3aszt70"
         },
         "type": "object",
+        "description": "segment",
         "properties": {
           "line": {
             "type": "object",
@@ -534,7 +535,6 @@
                   },
                   "required": [
                     "deltaLatitude",
-                    "deltaLongitude",
                     "deltaLongitude"
                   ]
                 }
@@ -551,21 +551,190 @@
                   "type": "object",
                   "properties": {
                     "latitude": {
-                      "type": "string",
+                      "type": "integer",
                       "x-stoplight": {
                         "id": "mdje0c2tkqrp2"
+                      },
+                      "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10), unavailable(900000001)} (-900000000..900000001)   "
+                    },
+                    "longitude": {
+                      "type": "integer",
+                      "x-stoplight": {
+                        "id": "2d093skd443a7"
+                      },
+                      "description": "INTEGER {oneMicrodegreeEast (10), oneMicrodegreeWest (-10), unavailable(1800000001)} (-1800000000..1800000001)"
+                    }
+                  },
+                  "required": [
+                    "latitude",
+                    "longitude"
+                  ]
+                }
+              },
+              "absolutePositionsWithAltitude": {
+                "type": "array",
+                "x-stoplight": {
+                  "id": "zcaxqowf50k3i"
+                },
+                "items": {
+                  "x-stoplight": {
+                    "id": "wqlh3g74jtvu9"
+                  },
+                  "type": "object",
+                  "properties": {
+                    "latitude": {
+                      "type": "integer",
+                      "x-stoplight": {
+                        "id": "hv71vn9m7bxid"
+                      },
+                      "description": "INTEGER {oneMicrodegreeNorth (10), oneMicrodegreeSouth (-10), unavailable(900000001)} (-900000000..900000001)"
+                    },
+                    "longitude": {
+                      "type": "integer",
+                      "x-stoplight": {
+                        "id": "z85h54s7gqy5z"
+                      },
+                      "description": "INTEGER {oneMicrodegreeEast (10), oneMicrodegreeWest (-10), unavailable(1800000001)} (-1800000000..1800000001)"
+                    },
+                    "altitude": {
+                      "type": "object",
+                      "x-stoplight": {
+                        "id": "910cye8iwfbcj"
+                      },
+                      "required": [
+                        "altitudeValue",
+                        "altitudeConfidence"
+                      ],
+                      "properties": {
+                        "altitudeValue": {
+                          "type": "integer",
+                          "x-stoplight": {
+                            "id": "3grc36gw2wtq8"
+                          },
+                          "description": "INTEGER {referenceEllipsoidSurface(0), oneCentimeter(1), unavailable(800001)} (-100000..800001)"
+                        },
+                        "altitudeConfidence": {
+                          "type": "integer",
+                          "x-stoplight": {
+                            "id": "xwmtsv1qkp4wy"
+                          },
+                          "description": "AltitudeConfidence ::= ENUMERATED {\r\nalt-000-01 (0),\r\nalt-000-02 (1),\r\nalt-000-05 (2),\r\nalt-000-10 (3),\r\nalt-000-20 (4),\r\nalt-000-50 (5),\r\nalt-001-00 (6),\r\nalt-002-00 (7),\r\nalt-005-00 (8),\r\nalt-010-00 (9),\r\nalt-020-00 (10),\r\nalt-050-00 (11),\r\nalt-100-00 (12),\r\nalt-200-00 (13),\r\noutOfRange (14),\r\nunavailable (15)\r\n}"
+                        }
                       }
                     }
-                  }
+                  },
+                  "required": [
+                    "latitude",
+                    "longitude",
+                    "altitude"
+                  ]
                 }
               }
             }
+          },
+          "laneWidth": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "m42a11e2wrxyw"
+            },
+            "description": "LaneWidth::= INTEGER (0..1023)\r\n\r\nИзмеряется в сантиметрах"
           }
         },
         "required": [
           "line"
-        ],
-        "description": "segment"
+        ]
+      },
+      "ivi-message-ivi-optional-glc-parts-area": {
+        "title": "ivi-message-ivi-optional-glc-parts-area",
+        "x-stoplight": {
+          "id": "47625zfxti35t"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "ko62b4ybriizo"
+            }
+          }
+        },
+        "description": "Описание полилинии приведено чуть выше в описании «сегмента».\n\nОдин из вариантов\n\nКадр данных PolygonalLine должен содержать определение ломаной линии как одной из следующих альтернатив:\n\n- последовательность дельта-точек относительно предыдущей позиции с широтой и долготой, закодированной элементом данных DeltaPosition, причем первая позиция является эталонной позицией в контейнере местоположения;\n\n- последовательность точек дельты относительно предыдущего положения с широтой, долготой и высотой, как закодировано элементом данных DeltaReferencePosition и как определено в ETSI/TS 102 894-2,\n\nпервая позиция является эталонной позицией в контейнере местоположений;\n\n— последовательность абсолютных положений с широтой и долготой, закодированная элементом данных AbsolutePosition; в этом случае опорное положение в контейнере местоположений служит первой точкой ломаной линии;\n\n— последовательность абсолютных положений с широтой, долготой и высотой, закодированная элементом данных AbsolutePositionWAltitude. В этом случае опорная позиция в контейнере местоположений служит первой точкой ломаной линии."
+      },
+      "ivi-message-ivi-optional-glc-parts-computedSegment": {
+        "title": "ivi-message-ivi-optional-glc-parts-computedSegment",
+        "x-stoplight": {
+          "id": "p4ya3lm3s5u9u"
+        },
+        "type": "object",
+        "description": "computedSegment",
+        "properties": {
+          "zoneId": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "cp863cdaompju"
+            }
+          },
+          "laneNumber": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "k5bq4go8fopb8"
+            },
+            "description": "LanePosition ::= INTEGER {offTheRoad(-1), hardShoulder(0),\r\nexternalmostDrivingLane(1), SecondLaneFromOutside(2)} (-1..14)\r\n\r\nЭтот DE указывает информацию о поперечном положении на дороге в разрешении полос, отсчитываемых от внешней границы дороги для данного направления движения. Значение -1 означает, что указанная позиция находится за пределами дороги."
+          },
+          "laneWidth": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "81p5l6nq05vng"
+            },
+            "description": "INTEGER (0..1023)\r\n\r\nИзмеряется в сантиметрах"
+          },
+          "offsetDistance": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "ttgdd1uefq2ad"
+            },
+            "description": "INTEGER (−32768..32767)"
+          },
+          "offsetPosition": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "3d2du8ask71bq"
+            },
+            "properties": {
+              "deltaLatitude": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "mnlnzl1h4kpyt"
+                },
+                "description": "DeltaLatitude ::= INTEGER {oneMicrogradeNorth (10), oneMicrogradeSouth (-10), unavailable(131072)} (-131071..131072)\r\n\r\nОн определяет широту смещения относительно указанного значения широты. Его можно использовать для описания географической точки относительно конкретного географического ориентира.\r\nпозиция.\r\nПоложительные значения используются для обеспечения смещения к северу от исходной позиции. Отрицательные значения используются для обеспечения смещения к югу от\r\nисходное положение. Если информация недоступна, значение должно быть установлено равным 131 072.\r\n\r\nЕдиница измерения: 0,1 микроградус"
+              },
+              "deltaLongitude": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "ilb627cn7ap5f"
+                },
+                "description": "DeltaLongitude ::= INTEGER {oneMicrogradeeast (10), oneMicrogradeWest (-10), недоступно(131072)} (-131071..131072)\r\n\r\nОн определяет смещение долготы относительно указанного значения долготы. Его можно использовать для описания географической точки относительно конкретного эталонного географического положения.\r\nПоложительные значения используются для обеспечения смещения на восток от исходной позиции. Отрицательные значения используются для обеспечения смещения к западу от\r\nисходное положение. Если информация недоступна, значение должно быть установлено равным 131 072.\r\n\r\nЕдиница измерения: 0,1 микроградус"
+              },
+              "deltaAltitude": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "46e7mohzlvqux"
+                },
+                "description": "DeltaAltitude ::= INTEGER {oneCentimeterUp (1), oneCentimeterDown (-1), unavailable(12800)} (-12700..12800)\r\n\r\nОн определяет высоту смещения относительно указанного значения высоты. Его можно использовать для описания географической точки относительно конкретного географического ориентира.\r\nпозиция.\r\nПоложительные значения используются для обеспечения смещения высоты над контрольной позицией. Для значений, равных или превышающих 127,99 метра, это значение должно составлять 12 799. Отрицательные значения используются для обеспечения смещения высоты ниже исходного положения. Если информация недоступна, значение должно быть установлено равным 12 800.\r\n\r\nЕдиница измерения: 0,01 метр"
+              }
+            },
+            "required": [
+              "deltaLatitude",
+              "deltaLongitude",
+              "deltaAltitude"
+            ]
+          }
+        },
+        "required": [
+          "zoneId",
+          "laneNumber",
+          "laneWidth"
+        ]
       }
     }
   }
