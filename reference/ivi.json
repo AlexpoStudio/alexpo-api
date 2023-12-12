@@ -311,6 +311,21 @@
                 "x-stoplight": {
                   "id": "e47lrxnl7pv1y"
                 }
+              },
+              "optional": {
+                "type": "object",
+                "x-stoplight": {
+                  "id": "80sjc09yqfdzg"
+                },
+                "description": "Один из блоков:\r\n\r\nglc - GeographicLocationContainer,\r\n\r\ngic - GeneralIviContainer,\r\n\r\nrcc - RoadConfigurationContainer,\r\n\r\ntc - TextContainer,\r\n\r\nlac - LayoutContainer,",
+                "properties": {
+                  "glc": {
+                    "$ref": "#/components/schemas/ivi-message-ivi-optional-glc",
+                    "x-stoplight": {
+                      "id": "pcuxo4d7hp7ua"
+                    }
+                  }
+                }
               }
             }
           }
@@ -755,6 +770,130 @@
           "laneNumber",
           "laneWidth"
         ]
+      },
+      "ivi-message-ivi-optional-gic": {
+        "title": "ivi-message-ivi-optional-gic",
+        "x-stoplight": {
+          "id": "jst0h1wfqvorm"
+        },
+        "type": "object",
+        "properties": {
+          "detectionZoneIds": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "qveq556uado8w"
+            },
+            "description": "Зоны в которых сообщение должно приниматься приёмными устройствами.",
+            "items": {
+              "x-stoplight": {
+                "id": "1yhzv6zgepll3"
+              },
+              "type": "integer"
+            }
+          },
+          "its-Rrid": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "2zwjuifxe2a26"
+            }
+          },
+          "relevanceZoneIds": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "hn90iesgncqox"
+            },
+            "description": "Зоны в которых сообщение релевантно (актуально)."
+          },
+          "direction": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "2w1iu1cw6apt7"
+            },
+            "description": "0 - sameDirection Same direction as implicitly defined in the definition of the zone\r\n\r\n1 - bothDirections Both directions\r\n\r\n2 - oppositeDirection Opposite direction as implicitly defined in the definition of the zone"
+          },
+          "driverAwarenessZoneIds": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "nr6ctafd50woa"
+            },
+            "description": "Зоны осведомленности водителя.",
+            "items": {
+              "x-stoplight": {
+                "id": "f4zv1gqkhbn2k"
+              },
+              "type": "integer"
+            }
+          },
+          "minimumAwarenessTime": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "x3kwyxl7qnekn"
+            },
+            "description": "Минимальное время в десятых долях секунды до въезда автомобиля в\r\nобласть актуальности, в которой IVI сообщение должно быть доступно."
+          },
+          "applicableLanes": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "mt7pfy839ceo0"
+            },
+            "description": "Список полос на которые распространяется IVI-сообщение. Отсчитываются от внешней границы дороги для данного направления движения.\r\n\r\nLanePosition ::= INTEGER {offTheRoad(-1), hardShoulder(0), outermostDrivingLane(1), secondLaneFromOutside(2)} (-1..14)\r\n\r\nThis DE indicates the transversal position information on the road in resolution of lanes, counted from the outside border of the road for a given traffic direction. The value -1 denotes that the referenced position is outside the road.\r\n\r\n-1 - событие вне дороги\r\n0 - обочина\r\n1 - первая полоса от обочины\r\n2 - вторая полоса от обочины\r\n3 - ...",
+            "items": {
+              "x-stoplight": {
+                "id": "glesatiqelqca"
+              },
+              "type": "integer"
+            }
+          },
+          "iviType": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "ajvk5oneoshw5"
+            },
+            "description": "0 – Немедленное предупреждение об опасности Информация о немедленном предупреждении об опасности.\r\n\r\n1 - Нормативные сообщения Информация о нормативных сообщениях.\r\n\r\n2 - Информационные сообщения, связанные с дорожным движением. Информация, связанная с дорожным движением, не связанная с непосредственной опасностью.\r\n\r\n3 - Сообщения о загрязнении Информационные сообщения и предупреждающие сообщения, исключающие запреты и обязательства по вождению.\r\n\r\n4 Информационные сообщения, не связанные с дорожным движением Другая информация, не связанная с дорожным движением."
+          },
+          "iviPurpose": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "dmjw8hc05duj0"
+            },
+            "description": "0 — Безопасность IVI предусмотрена в целях обеспечения безопасности дорожного движения, например, в случае происшествий или погодных условий.\r\n\r\n1 – Экологический IVI, предназначенный для экологических целей, таких как снижение загрязнения воздуха или шумового загрязнения.\r\n\r\n2 - TrafficOptimization IVI предназначен для оптимизации трафика, например, для оптимального потока трафика в случае плотного трафика."
+          },
+          "laneStatus": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "gxkzl5w9csr38"
+            },
+            "description": "0 — открытая полоса открыта для движения в соответствии с ее типом, определенным в LaneType.\r\n\r\n1 – Закрытая полоса закрыта для движения транспорта.\r\n\r\n2 – полоса mergeR объединяется с соседней правой полосой.\r\n\r\n3 – полоса mergeL объединяется с соседней левой полосой.\r\n\r\n4 – mergeLR Полоса объединяется как с левой, так и с правой соседней полосой.\r\n\r\n5 — предварительно открытая полоса открыта для нормального движения только временно, например твердая обочина, открытая для движения транспорта.\r\n\r\n6 – расходящиеся Полоса расходится влево и вправо, напр. из-за препятствия или дорожных работ."
+          },
+          "CompleteVehicleCharacteristics": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "5p1576pp8urzn"
+            }
+          },
+          "driverCharacteristics": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "79c796ox07n5m"
+            },
+            "description": "unexperiencedDrivers (0),\r\n\r\nexperiencedDrivers (1),\r\n\r\nrfu1 (2),\r\n\r\nrfu2 (3)"
+          },
+          "layoutId": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "k4re1h83z9f25"
+            },
+            "description": "INTEGER(1..4,...)"
+          },
+          "preStoredlayoutId": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "8fu42tl1bvcfd"
+            },
+            "description": "INTEGER(1..64,...)"
+          }
+        },
+        "description": "gic"
       }
     }
   }
