@@ -896,11 +896,12 @@
         "description": "gic"
       },
       "ivi-message-ivi-optional-gic-roadSignCodes": {
-        "title": "ivi-message-ivi-optional-gic-",
+        "title": "ivi-message-ivi-optional-gic-roadSignCodes",
         "x-stoplight": {
           "id": "jiqmbakfsuhfv"
         },
         "type": "object",
+        "description": "roadSignCodes",
         "properties": {
           "layoutComponentId": {
             "type": "integer",
@@ -910,17 +911,24 @@
             "description": "INTEGER(1..4,...)"
           },
           "code": {
-            "type": "string",
             "x-stoplight": {
               "id": "gd7lvqwykw2v5"
             },
-            "description": "Один из:\r\n\r\nviennaConvetionVcCode, -- see Vienna Convention Annex A\r\n\r\niso14823 ISO14823Code,\r\n\r\nitisCodes INTEGER (0..65535), -- see SAE J2540\r\n\r\nanyCatalogue AnyCatalogue,"
+            "description": "Один из:\r\n\r\nviennaConvetionVcCode, -- see Vienna Convention Annex A\r\n\r\niso14823 ISO14823Code,\r\n\r\nitisCodes INTEGER (0..65535), -- see SAE J2540\r\n\r\nanyCatalogue AnyCatalogue,",
+            "type": "object",
+            "properties": {
+              "iso14823": {
+                "$ref": "#/components/schemas/ivi-message-ivi-optional-gic-roadSignCodes-iso14823",
+                "x-stoplight": {
+                  "id": "bnjdxs0z2wseb"
+                }
+              }
+            }
           }
         },
         "required": [
           "code"
-        ],
-        "description": "roadSignCodes"
+        ]
       },
       "ivi-message-ivi-optional-gic-roadSignCodes-iso14823": {
         "title": "ivi-message-ivi-optional-gic-roadSignCodes-",
@@ -1215,7 +1223,7 @@
                 "description": "Расстояние между транспортными средствами"
               },
               "ddd": {
-                "type": "string",
+                "$ref": "#/components/schemas/ivi-message-ivi-optional-gic-roadSignCodes-iso14823-attributes-ddd",
                 "x-stoplight": {
                   "id": "r481w7ndhh3tt"
                 },
