@@ -14,6 +14,45 @@
   ],
   "paths": {},
   "components": {
-    "schemas": {}
+    "schemas": {
+      "ivi-message": {
+        "title": "ivi-message",
+        "x-stoplight": {
+          "id": "pmzqetvo3izww"
+        },
+        "type": "object",
+        "description": "ivi сообщение",
+        "properties": {
+          "header": {
+            "type": "object",
+            "x-stoplight": {
+              "id": "2hhvn0xp29qn5"
+            },
+            "properties": {
+              "protocolVersion": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "bjwcm6e70s367"
+                },
+                "description": "Версия протокола."
+              },
+              "messageID": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "153ygu08e4577"
+                }
+              },
+              "stationID": {
+                "type": "integer",
+                "x-stoplight": {
+                  "id": "5amz5lt2q1xpi"
+                },
+                "description": "Идентификатор станции.\r\n\r\nДля АСУДД отправляющей сообщение в качестве идентификатора станции должен быть установлен идентификатор этой АСУДД."
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
