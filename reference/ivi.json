@@ -379,7 +379,367 @@
               }
             }
           }
-        }
+        },
+        "examples": [
+          {
+            "header": {
+              "protocolVersion": 0,
+              "messageID": 0,
+              "stationID": 0
+            },
+            "ivi": {
+              "mandatory": {
+                "serviceProviderId": {
+                  "countryCode": "string",
+                  "providerIdentifier": 0
+                },
+                "iviIdentificationNumber": 0,
+                "timestamp": 0,
+                "validFrom": 0,
+                "validTo": 0,
+                "connectedIviStructures": "string",
+                "iviStatus": 0
+              },
+              "optional": {
+                "glc": {
+                  "referencePosition": {
+                    "latitude": 0,
+                    "longitude": 0,
+                    "positionConfidenceEllipse": {
+                      "semiMajorConfidence": 0,
+                      "semiMinorConfidence": 0,
+                      "semiMajorOrientation": 0
+                    },
+                    "altitude": {
+                      "altitudeValue": 0,
+                      "altitudeConfidence": 0
+                    }
+                  },
+                  "referencePositionTime": 0,
+                  "referencePositionHeading": {
+                    "headingValue": 0,
+                    "headingConfidence": 0
+                  },
+                  "referencePositionSpeed": {
+                    "speedValue": 0,
+                    "speedConfidence": 0
+                  },
+                  "parts": [
+                    {
+                      "zoneId": 0,
+                      "laneNumber": 0,
+                      "zoneExtension": 0,
+                      "zoneHeading": {
+                        "headingValue": 0,
+                        "headingConfidence": 0
+                      }
+                    }
+                  ]
+                },
+                "gic": [
+                  {
+                    "detectionZoneIds": [
+                      0
+                    ],
+                    "its-Rrid": 0,
+                    "relevanceZoneIds": 0,
+                    "direction": 0,
+                    "driverAwarenessZoneIds": [
+                      0
+                    ],
+                    "minimumAwarenessTime": 0,
+                    "applicableLanes": [
+                      0
+                    ],
+                    "iviType": 0,
+                    "iviPurpose": 0,
+                    "laneStatus": 0,
+                    "CompleteVehicleCharacteristics": {},
+                    "driverCharacteristics": 0,
+                    "layoutId": 0,
+                    "preStoredlayoutId": 0,
+                    "roadSignCodes": {
+                      "layoutComponentId": 0,
+                      "code": {
+                        "iso14823": {
+                          "pictogramCode": {
+                            "countryCode": "string",
+                            "serviceCategoryCode": "string",
+                            "pictogramCategoryCode": {
+                              "nature": 0,
+                              "serialNumber": 0
+                            }
+                          },
+                          "attributes": {
+                            "dtm": {
+                              "hei": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "wid": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "vln": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "wei": {
+                                "value": 0,
+                                "unit": 0
+                              }
+                            },
+                            "edt": {
+                              "year": {
+                                "syr": 0,
+                                "eyr": 0
+                              },
+                              "month-day": {
+                                "smd": {
+                                  "month": 0,
+                                  "day": 0
+                                },
+                                "emd": {
+                                  "month": 0,
+                                  "day": 0
+                                }
+                              },
+                              "pmd": "string",
+                              "hourMinutes": {
+                                "shm": {
+                                  "hours": 0,
+                                  "mins": 0
+                                },
+                                "ehm": {
+                                  "hours": 0,
+                                  "mins": 0
+                                }
+                              },
+                              "dayOfWeek": 0,
+                              "period": {
+                                "hours": 0,
+                                "mins": 0
+                              }
+                            },
+                            "dfl": 0,
+                            "ved": {
+                              "hei": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "wid": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "vln": {
+                                "value": 0,
+                                "unit": 0
+                              },
+                              "wei": {
+                                "value": 0,
+                                "unit": 0
+                              }
+                            },
+                            "spe": {
+                              "spm": 0,
+                              "mns": 0,
+                              "unit": 0
+                            },
+                            "roi": 0,
+                            "dbv": {
+                              "value": 0,
+                              "unit": 0
+                            },
+                            "ddd": {
+                              "dcj": 0,
+                              "dcr": 0,
+                              "tpl": 0,
+                              "ioList": [
+                                {
+                                  "drn": 0,
+                                  "dp": [
+                                    {
+                                      "depType": 0,
+                                      "depRSCode": "string",
+                                      "depBlob": "string",
+                                      "plnId": 0,
+                                      "plnText": "string"
+                                    }
+                                  ],
+                                  "dr": [
+                                    {
+                                      "derType": 0,
+                                      "ronId": 0,
+                                      "ronText": "string"
+                                    }
+                                  ],
+                                  "rne": 0,
+                                  "stnId": 0,
+                                  "stnText": "string",
+                                  "dcp": {
+                                    "value": 0,
+                                    "unit": 0
+                                  },
+                                  "ddp": {
+                                    "value": 0,
+                                    "unit": 0
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "extraText": [
+                      {
+                        "layoutComponentId": 0,
+                        "language": "string",
+                        "textContent": "string"
+                      }
+                    ]
+                  }
+                ],
+                "rcc": [
+                  {
+                    "zoneIds": [
+                      0
+                    ],
+                    "roadType": 0,
+                    "laneConfiguration": [
+                      {
+                        "laneNumber": 0,
+                        "direction": 0,
+                        "validity": {
+                          "year": {
+                            "syr": 0,
+                            "eyr": 0
+                          },
+                          "month-day": {
+                            "smd": {
+                              "month": 0,
+                              "day": 0
+                            },
+                            "emd": {
+                              "month": 0,
+                              "day": 0
+                            }
+                          },
+                          "pmd": "string",
+                          "hourMinutes": {
+                            "shm": {
+                              "hours": 0,
+                              "mins": 0
+                            },
+                            "ehm": {
+                              "hours": 0,
+                              "mins": 0
+                            }
+                          },
+                          "dayOfWeek": 0,
+                          "period": {
+                            "hours": 0,
+                            "mins": 0
+                          }
+                        },
+                        "laneType": 0,
+                        "laneTypeQualifier": {
+                          "tractor": {
+                            "equalTo": [
+                              "string"
+                            ],
+                            "notEqualTo": [
+                              "string"
+                            ],
+                            "ranges": [
+                              {
+                                "comparisonOperator": 0,
+                                "limits": "string"
+                              }
+                            ]
+                          },
+                          "trailer": {
+                            "equalTo": [
+                              "string"
+                            ],
+                            "notEqualTo": [
+                              "string"
+                            ],
+                            "ranges": [
+                              {
+                                "comparisonOperator": 0,
+                                "limits": "string"
+                              }
+                            ]
+                          },
+                          "train": {
+                            "equalTo": [
+                              "string"
+                            ],
+                            "notEqualTo": [
+                              "string"
+                            ],
+                            "ranges": [
+                              {
+                                "comparisonOperator": 0,
+                                "limits": "string"
+                              }
+                            ]
+                          }
+                        },
+                        "laneStatus": 0,
+                        "laneWidth": 0
+                      }
+                    ]
+                  }
+                ],
+                "tc": [
+                  {
+                    "detectionZoneIds": [
+                      0
+                    ],
+                    "relevanceZoneIds": [
+                      0
+                    ],
+                    "direction": 0,
+                    "driverAwarenessZoneIds": [
+                      0
+                    ],
+                    "minimumAwarenessTime": "string",
+                    "applicableLanes": [
+                      0
+                    ],
+                    "layoutId": 0,
+                    "preStoredlayoutId": 0,
+                    "text": {
+                      "layoutComponentId": 0,
+                      "language": "string",
+                      "textContent": "string"
+                    },
+                    "data": "string"
+                  }
+                ],
+                "lac": [
+                  {
+                    "layoutId": "string",
+                    "height": "string",
+                    "width": "string",
+                    "layoutComponents": [
+                      {
+                        "layoutComponentId": 0,
+                        "height": 0,
+                        "width": 0,
+                        "x": 0,
+                        "y": 0,
+                        "textScripting": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
       },
       "ivi-message-ivi-optional-glc-parts": {
         "type": "array",
