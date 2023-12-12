@@ -16,42 +16,142 @@
   "components": {
     "schemas": {
       "ivi-message": {
-        "title": "ivi-message",
-        "x-stoplight": {
-          "id": "pmzqetvo3izww"
-        },
         "type": "object",
-        "description": "ivi сообщение",
+        "x-examples": {
+          "Example 1": {
+            "ivi": {
+              "mandatory": {
+                "serviceProviderId": {
+                  "countryCode": "string",
+                  "providerIdentifier": 0
+                },
+                "iviIdentificationNumber": 0,
+                "timestamp": 0,
+                "validFrom": 0
+              }
+            }
+          }
+        },
+        "properties": {
+          "ivi": {
+            "type": "object",
+            "required": [
+              "mandatory"
+            ],
+            "properties": {
+              "mandatory": {
+                "type": "object",
+                "required": [
+                  "serviceProviderId",
+                  "iviIdentificationNumber",
+                  "iviStatus"
+                ],
+                "properties": {
+                  "serviceProviderId": {
+                    "type": "object",
+                    "description": "Идентифицирует организацию, предоставившую IVI, с помощью поставщика DE; содержит код страны согласно ISO 3166‑1. Числа должны быть\r\nназначаются по национальному признаку. Для регистрации см. ISO 14816.",
+                    "required": [
+                      "countryCode",
+                      "providerIdentifier"
+                    ],
+                    "properties": {
+                      "countryCode": {
+                        "type": "string",
+                        "description": "указывает код страны по стандарту ISO 3166‑1.\r\n\r\nКодировка CountryCode для России определяется как «01010 11100».\r\nЭто определяется на основе таблицы\r\nhttps://wiki.stdev.ru/pages/viewpage.action?pageId=473467502"
+                      },
+                      "providerIdentifier": {
+                        "type": "integer",
+                        "description": "указывает идентификатор поставщика услуг как зарегистрированный"
+                      }
+                    }
+                  },
+                  "iviIdentificationNumber": {
+                    "type": "integer",
+                    "description": "IviIdentificationNumber::= INTEGER(1..32767,...)\r\n\r\nИдентификатор структуры IVI, присвоенный Поставщиком услуг с использованием DE.\r\nIviИдентификационный номер."
+                  },
+                  "timestamp": {
+                    "type": "integer",
+                    "description": "Количество миллисекунд с 2004-01-01T00:00:00.000Z\r\n\r\nОтметка времени создания или последних изменений информационного содержания."
+                  },
+                  "validFrom": {
+                    "type": "integer",
+                    "description": "Количество миллисекунд с 2004-01-01T00:00:00.000Z\r\n\r\nВремя начала периода действия сообщения."
+                  },
+                  "validTo": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "avx7viot3hf5x"
+                    },
+                    "description": "Количество миллисекунд с 2004-01-01T00:00:00.000Z\r\n\r\nВремя окончания срока действия сообщения."
+                  },
+                  "connectedIviStructures": {
+                    "type": "array",
+                    "x-stoplight": {
+                      "id": "dhbjn4plnkkzm"
+                    },
+                    "description": "IviIdentificationNumber::= INTEGER(1..32767,...)\r\n\r\nСписок других iviIdentificationNumber, идентифицирующих другие структуры IVI того же органа, которые подключены к структуре IVI с помощью DE IviIdentificationNumber.",
+                    "items": {
+                      "x-stoplight": {
+                        "id": "cxqpvdry3w451"
+                      },
+                      "type": "integer"
+                    }
+                  },
+                  "iviStatus": {
+                    "type": "integer",
+                    "x-stoplight": {
+                      "id": "1palv1q38veh6"
+                    },
+                    "description": "IviStatus::= INTEGER {\r\n\r\nnew (0),\r\nupdate (1),\r\ncancellation (2),\r\nnegation (3)\r\n}(0..7)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "ivi"
+        ],
+        "description": "ivi/mandatory"
+      },
+      "ivi-message-header": {
+        "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "header": {
+              "protocolVersion": 0,
+              "messageID": 0,
+              "stationID": 0
+            }
+          }
+        },
         "properties": {
           "header": {
             "type": "object",
-            "x-stoplight": {
-              "id": "2hhvn0xp29qn5"
-            },
+            "required": [
+              "protocolVersion",
+              "messageID",
+              "stationID"
+            ],
+            "description": "Версия протокола.",
             "properties": {
               "protocolVersion": {
-                "type": "integer",
-                "x-stoplight": {
-                  "id": "bjwcm6e70s367"
-                },
-                "description": "Версия протокола."
+                "type": "integer"
               },
               "messageID": {
-                "type": "integer",
-                "x-stoplight": {
-                  "id": "153ygu08e4577"
-                }
+                "type": "integer"
               },
               "stationID": {
                 "type": "integer",
-                "x-stoplight": {
-                  "id": "5amz5lt2q1xpi"
-                },
                 "description": "Идентификатор станции.\r\n\r\nДля АСУДД отправляющей сообщение в качестве идентификатора станции должен быть установлен идентификатор этой АСУДД."
               }
             }
           }
-        }
+        },
+        "required": [
+          "header"
+        ],
+        "description": "header"
       }
     }
   }
