@@ -36,17 +36,31 @@
           }
         },
         "description": "ivi/mandatory",
+        "examples": [
+          {
+            "serviceProviderId": {
+              "countryCode": "string",
+              "providerIdentifier": 0
+            },
+            "iviIdentificationNumber": 0,
+            "timestamp": 0,
+            "validFrom": 0,
+            "validTo": 0,
+            "connectedIviStructures": "string",
+            "iviStatus": 0
+          }
+        ],
         "properties": {
           "serviceProviderId": {
             "type": "object",
             "x-stoplight": {
               "id": "djkqfxjuuv5wc"
             },
+            "description": "Идентифицирует организацию, предоставившую IVI, с помощью поставщика DE; содержит код страны согласно ISO 3166‑1. Числа должны быть\r\nназначаются по национальному признаку. Для регистрации см. ISO 14816.",
             "required": [
               "countryCode",
               "providerIdentifier"
             ],
-            "description": "Идентифицирует организацию, предоставившую IVI, с помощью поставщика DE; содержит код страны согласно ISO 3166‑1. Числа должны быть\r\nназначаются по национальному признаку. Для регистрации см. ISO 14816.",
             "properties": {
               "countryCode": {
                 "type": "string",
@@ -93,11 +107,17 @@
             "description": "IviIdentificationNumber::= INTEGER(1..32767,...)\r\n\r\nСписок других iviIdentificationNumber, идентифицирующих другие структуры IVI того же органа, которые подключены к структуре IVI с помощью DE IviIdentificationNumber."
           },
           "connectedIviStructures": {
-            "type": "string",
+            "type": "array",
             "x-stoplight": {
               "id": "nxw5aj769eicn"
             },
-            "description": "IviIdentificationNumber::= INTEGER(1..32767,...)\r\n\r\nСписок других iviIdentificationNumber, идентифицирующих другие структуры IVI того же органа, которые подключены к структуре IVI с помощью DE IviIdentificationNumber."
+            "description": "IviIdentificationNumber::= INTEGER(1..32767,...)\r\n\r\nСписок других iviIdentificationNumber, идентифицирующих другие структуры IVI того же органа, которые подключены к структуре IVI с помощью DE IviIdentificationNumber.",
+            "items": {
+              "x-stoplight": {
+                "id": "zp5vygos5ms40"
+              },
+              "type": "integer"
+            }
           },
           "iviStatus": {
             "type": "integer",
@@ -111,20 +131,6 @@
           "serviceProviderId",
           "iviIdentificationNumber",
           "iviStatus"
-        ],
-        "examples": [
-          {
-            "serviceProviderId": {
-              "countryCode": "string",
-              "providerIdentifier": 0
-            },
-            "iviIdentificationNumber": 0,
-            "timestamp": 0,
-            "validFrom": 0,
-            "validTo": 0,
-            "connectedIviStructures": "string",
-            "iviStatus": 0
-          }
         ]
       },
       "ivi-message-header": {
